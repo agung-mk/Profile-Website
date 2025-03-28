@@ -39,9 +39,9 @@ html
 - ![Font Awesome](https://img.shields.io/badge/Font_Awesome-528DD7?style=for-the-badge&logo=font-awesome&logoColor=white)
 - ![Google Fonts](https://img.shields.io/badge/Google_Fonts-4285F4?style=for-the-badge&logo=google-fonts&logoColor=white)
 
-## 🎥 Demo
+## 🌐 Demo
 
-[Demo](https://agung-mk.github.io/profile/
+[Demo_Web](https://agung-mk.github.io/profile/
 )
 
 ## 🧰 Installation
@@ -88,8 +88,8 @@ MIT © [Agung Mahesa](https://agungdev.xyz)
     <img src="https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white">
   </a>
 </div>
-```
 
+```
 This README features:
 
 1. **Animated badges** for technologies used
@@ -107,3 +107,4 @@ The markdown uses GitHub-flavored syntax with:
 - HTML code blocks
 - Table formatting
 - Embedded image placeholder (replace with your actual demo video)
+```
