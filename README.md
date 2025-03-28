@@ -20,11 +20,10 @@ A stunning, animated personal profile website built with **Tailwind CSS** featur
 
 ## 🎨 Design Highlights
 
-```html
+html
 <div class="glass-effect dark:glass-effect-light rounded-2xl p-6 shadow-lg">
   <!-- Glass card content -->
 </div>
-```
 ```
 
 ## 🌈 Color Scheme
