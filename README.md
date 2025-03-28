@@ -25,6 +25,7 @@ A stunning, animated personal profile website built with **Tailwind CSS** featur
   <!-- Glass card content -->
 </div>
 ```
+```
 
 ## 🌈 Color Scheme
 
