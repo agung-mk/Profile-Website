@@ -41,7 +41,7 @@ html
 
 ## 🎥 Demo
 
-[![Demo]](https://agung-mk.github.io/profile/
+[Demo](https://agung-mk.github.io/profile/
 )
 
 ## 🧰 Installation
