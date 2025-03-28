@@ -8,53 +8,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    },
-                    colors: {
-                        primary: {
-                            500: '#0095f6', // Warna biru Instagram
-                            600: '#0077e6',
-                        },
-                        dark: {
-                            800: '#1e1e2d',
-                            900: '#121218',
-                        }
-                    },
-                    keyframes: {
-                        'fade-in-up': {
-                            '0%': { opacity: '0', transform: 'translateY(10px)' },
-                            '100%': { opacity: '1', transform: 'translateY(0)' },
-                        },
-                        'rotate': {
-                            '0%': { transform: 'rotate(0deg)' },
-                            '100%': { transform: 'rotate(360deg)' },
-                        },
-                        'telegram-verified': {
-                            '0%': { transform: 'scale(1)' },
-                            '50%': { transform: 'scale(1.2)' },
-                            '100%': { transform: 'scale(1)' },
-                        },
-                        'ripple': {
-                            '0%': { transform: 'scale(0.5)', opacity: '1' },
-                            '100%': { transform: 'scale(2.5)', opacity: '0' },
-                        }
-                    },
-                    animation: {
-                        'fade-in-up': 'fade-in-up 0.5s ease-out',
-                        'rotate': 'rotate 0.5s ease-in-out',
-                        'telegram-verified': 'telegram-verified 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55)',
-                        'ripple': 'ripple 1s ease-out infinite',
-                    }                                
-                }
-            }
-        }
-    </script>
+  
     <style type="text/tailwindcss">
         @layer utilities {
             .text-gradient {
@@ -144,13 +98,9 @@
     </style>
 </head>
 <body class="bg-dark-900 text-gray-100 min-h-screen font-sans dark:bg-gray-50 dark:text-gray-800 transition-colors duration-300">
-    <!-- Loading Screen -->
     <div id="loadingScreen" class="fixed inset-0 bg-dark-900 dark:bg-gray-50 z-50 flex flex-col items-center justify-center transition-colors duration-300">
         <img src="https://i.gifer.com/Xqg8.gif" alt="Loading" class="w-35 h-35">
-     <!-- <p class="mt-4 text-gray-400 dark:text-gray-600">Loading...</p> -->
     </div>
-
-    <!-- Main Content (hidden initially) -->
     <div id="mainContent" class="hidden">
         <!-- Theme Toggle Button -->
         <div id="themeToggle" class="fixed bottom-6 right-6 z-30 animate-fade-in-up opacity-0">
@@ -163,8 +113,6 @@
                 </svg>
             </button>
         </div>
-
-        <!-- Verification Animation Elements -->
        <div id="verificationOverlay" class="fixed inset-0 bg-black/70 z-40 flex items-center justify-center hidden">
     <div class="relative">
         <div class="absolute inset-0 flex items-center justify-center">
@@ -182,13 +130,9 @@
         </div>
     </div>
 </div>
-
-        <!-- Hero Section -->
         <div class="relative overflow-hidden">
             <div class="absolute inset-0 bg-gradient-to-b from-black/80 to-dark-900 dark:from-black/60 dark:to-gray-50 z-10"></div>
             <img alt="Cover image" class="w-full h-64 md:h-80 object-cover object-center" src="https://files.catbox.moe/tobewj.jpg">
-                        
-        <!-- Profile Content -->
         <div class="container mx-auto px-4 max-w-2xl -mt-12 relative z-20">
             <!-- Profile Card -->
             <div class="glass-effect dark:glass-effect-light rounded-2xl p-6 shadow-lg">
@@ -196,18 +140,14 @@
                     <div class="relative">
                         <img alt="Profile picture" class="w-24 h-24 md:w-28 md:h-28 rounded-full border-4 border-dark-800 dark:border-gray-200" src="https://files.catbox.moe/ndurdv.jpg">
                     </div>
-                    
-                    <!-- Nama dengan centang biru Instagram -->
                     <div class="flex items-center justify-center mt-4">
                         <h1 class="text-2xl md:text-3xl font-bold">Agung</h1>
                         <div id="verifiedBadge" class="verified-badge dark:verified-badge-light w-5 h-5 ml-2" style="transform: translateY(-1px);">
                             <i class="fas fa-check text-xs"></i>
                         </div>
                     </div>
-                    
                     <p class="text-gray-400 dark:text-gray-600 mt-1">Right now I just do what I'm interested in.</p>
-                    
-                    <!-- Skills -->
+
                     <div class="flex flex-wrap justify-center gap-4 mt-4">
                         <div class="flex items-center bg-dark-800 dark:bg-gray-200 px-3 py-1 rounded-full">
                             <i class="fas fa-laptop-code text-primary-500 dark:text-blue-600 mr-2"></i>
@@ -222,8 +162,6 @@
                             <span>Music</span>
                         </div>
                     </div>
-                    
-                    <!-- Social Links -->
                     <div class="flex space-x-5 mt-6">
                         <a href="https://instagram.com/siagungg_" class="text-xl hover:text-primary-500 dark:hover:text-blue-600 transition-colors">
                             <i class="fab fa-instagram"></i>
@@ -240,11 +178,9 @@
                     </div>
                 </div>
             </div>
-
-            <!-- Links Section -->
             <div class="mt-8 space-y-4">
                 <h2 class="text-xl font-bold text-gradient"></h2>
-                
+
                 <a href="https://www.agungdev.xyz" class="card-hover glass-effect dark:glass-effect-light rounded-xl p-4 flex items-center">
                     <div class="bg-blue-500/10 dark:bg-blue-600/10 p-3 rounded-lg">
                         <i class="fas fa-globe text-blue-500 dark:text-blue-600"></i>
@@ -255,7 +191,6 @@
                     </div>
                     <i class="fas fa-chevron-right text-gray-500 dark:text-gray-400"></i>
                 </a>
-                
                 <a href="#" class="card-hover glass-effect dark:glass-effect-light rounded-xl p-4 flex items-center">
                     <div class="bg-red-500/10 dark:bg-red-600/10 p-3 rounded-lg">
                         <i class="fas fa-robot text-red-500 dark:text-red-600"></i>
@@ -266,7 +201,6 @@
                     </div>
                     <i class="fas fa-chevron-right text-gray-500 dark:text-gray-400"></i>
                 </a>
-                
                 <a href="#" class="card-hover glass-effect dark:glass-effect-light rounded-xl p-4 flex items-center">
                     <div class="bg-green-500/10 dark:bg-green-600/10 p-3 rounded-lg">
                         <i class="fas fa-briefcase text-green-500 dark:text-green-600"></i>
@@ -278,8 +212,6 @@
                     <i class="fas fa-chevron-right text-gray-500 dark:text-gray-400"></i>
                 </a>
             </div>
-
-            <!-- Spotify Section -->
             <div class="glass-effect dark:glass-effect-light rounded-xl p-4 mt-6 text-center">
                 <p class="text-sm text-gray-400 dark:text-gray-600">See what I'm currently listening on Spotify</p>
                 <div class="flex items-center justify-center mt-2">
@@ -287,145 +219,14 @@
                     <span>No listening to anything</span>
                 </div>
             </div>
-
-            <!-- Footer -->
             <div class="text-center text-gray-500 dark:text-gray-600 text-sm mt-8 pb-8">
                 <p>© 2025 Agung Mahesa. All rights reserved.</p>
             </div>
         </div>
     </div>
 
- <script>
-    // Simulate loading for 3 seconds then show content
-    setTimeout(() => {
-        document.getElementById('loadingScreen').classList.add('hidden');
-        document.getElementById('mainContent').classList.remove('hidden');
-        
-        // Animate theme toggle button
-        const themeToggle = document.getElementById('themeToggle');
-        setTimeout(() => {
-            themeToggle.classList.remove('opacity-0');
-            themeToggle.style.animation = 'fade-in-up 0.5s ease-out forwards';
-        }, 100);
-    }, 3000);
+   <script src="public/script.js"></script>
 
-    // Smooth Theme Transition Functions
-    async function toggleTheme() {
-        // Skip animation if not supported
-        if (!document.startViewTransition) {
-            applyThemeChange();
-            return;
-        }
-
-        // Start smooth transition
-        const transition = document.startViewTransition(() => {
-            applyThemeChange();
-        });
-
-        try {
-            // Wait for animations to be ready
-            await transition.ready;
-            
-            // Animate from center of screen
-            const x = window.innerWidth / 2;
-            const y = window.innerHeight / 2;
-            const endRadius = Math.hypot(
-                Math.max(x, window.innerWidth - x),
-                Math.max(y, window.innerHeight - y)
-            );
-            
-            document.documentElement.animate(
-                {
-                    clipPath: [
-                        `circle(0 at ${x}px ${y}px)`,
-                        `circle(${endRadius}px at ${x}px ${y}px)`
-                    ],
-                },
-                {
-                    duration: 800,
-                    easing: 'cubic-bezier(0.4, 0, 0.2, 1)',
-                    pseudoElement: '::view-transition-new(root)'
-                }
-            );
-        } catch (err) {
-            console.error('Transition failed:', err);
-            applyThemeChange();
-        }
-    }
-
-    function applyThemeChange() {
-        const html = document.documentElement;
-        
-        // Toggle theme
-        html.classList.toggle('dark');
-        
-        // Update icons
-        const sunIcon = document.getElementById('sunIcon');
-        const moonIcon = document.getElementById('moonIcon');
-        
-        if (html.classList.contains('dark')) {
-            sunIcon.classList.add('animate-rotate');
-            setTimeout(() => {
-                sunIcon.classList.remove('animate-rotate');
-                sunIcon.classList.add('hidden');
-                moonIcon.classList.remove('hidden');
-            }, 500);
-        } else {
-            moonIcon.classList.add('animate-rotate');
-            setTimeout(() => {
-                moonIcon.classList.remove('animate-rotate');
-                moonIcon.classList.add('hidden');
-                sunIcon.classList.remove('hidden');
-            }, 500);
-        }
-        
-        // Save preference
-        localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
-    }
-
-    // Theme toggle functionality
-    const html = document.querySelector('html');
-    const themeToggleBtn = document.querySelector('#themeToggle button');
-    
-    // Check for saved theme preference or use system preference
-    const currentTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-    html.classList.add(currentTheme);
-    
-    // Set initial icon visibility
-    const sunIcon = document.getElementById('sunIcon');
-    const moonIcon = document.getElementById('moonIcon');
-    if (currentTheme === 'dark') {
-        sunIcon.classList.remove('hidden');
-        moonIcon.classList.add('hidden');
-    } else {
-        sunIcon.classList.add('hidden');
-        moonIcon.classList.remove('hidden');
-    }
-    
-    // Attach smooth transition handler
-    themeToggleBtn.addEventListener('click', toggleTheme);
-
-    // Verified badge click handler
-    const verifiedBadge = document.getElementById('verifiedBadge');
-    const verificationOverlay = document.getElementById('verificationOverlay');
-    const closeVerification = document.getElementById('closeVerification');
-
-    verifiedBadge.addEventListener('click', () => {
-        verificationOverlay.classList.remove('hidden');
-        document.body.style.overflow = 'hidden';
-    });
-
-    closeVerification.addEventListener('click', () => {
-        verificationOverlay.classList.add('hidden');
-        document.body.style.overflow = '';
-    });
-
-    document.addEventListener('contextmenu', event => event.preventDefault());
-    document.onkeydown = function(e) {
-        if (e.key == "F12" || (e.ctrlKey && e.shiftKey && e.key == "I") || (e.ctrlKey && e.key == "U")) {
-            return false;
-        }
-    };
   </script>
  </body>
 </html>
