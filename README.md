@@ -41,9 +41,8 @@ html
 
 ## 🎥 Demo
 
-https://agung-mk.github.io/profile/
-
-[![Demo Video](https://img.youtube.com/vi/VIDEO_ID/0.jpg)](https://youtu.be/VIDEO_ID)
+[![Demo]](https://agung-mk.github.io/profile/
+)
 
 ## 🧰 Installation
 
