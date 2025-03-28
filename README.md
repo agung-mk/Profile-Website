@@ -89,7 +89,6 @@ MIT © [Agung Mahesa](https://agungdev.xyz)
   </a>
 </div>
 
-```
 This README features:
 
 1. **Animated badges** for technologies used
@@ -107,4 +106,3 @@ The markdown uses GitHub-flavored syntax with:
 - HTML code blocks
 - Table formatting
 - Embedded image placeholder (replace with your actual demo video)
-```
