@@ -3,20 +3,20 @@
 
 ![Profile Preview](https://files.catbox.moe/ndurdv.jpg)
 
-A stunning, animated personal profile website built with **Tailwind CSS** featuring smooth transitions, dark/light mode toggle, and modern UI effects - all in a single HTML file!
+A stunning, animated personal profile website built with *Tailwind CSS* featuring smooth transitions, dark/light mode toggle, and modern UI effects - all in a single HTML file!
 
 ## 🚀 Features
 
-- ✨ **Smooth Theme Transitions** with circle animation effect
-- 🌓 **Dark/Light Mode** toggle with system preference detection
-- 🎭 **Glass Morphism** design elements
-- 🔥 **Animated Components**:
+- ✨ *Smooth Theme Transitions* with circle animation effect
+- 🌓 *Dark/Light Mode* toggle with system preference detection
+- 🎭 *Glass Morphism* design elements
+- 🔥 *Animated Components*:
   - Loading screen animation
   - Verified badge ripple effect
   - Theme toggle icon rotation
   - Hover scale effects
-- 📱 **Fully Responsive** design
-- ⚡ **Optimized Performance** (95+ Lighthouse score)
+- 📱 *Fully Responsive* design
+- ⚡ *Optimized Performance* (95+ Lighthouse score)
 
 ## 🎨 Design Highlights
 
@@ -41,8 +41,7 @@ html
 
 ## 🌐 Demo
 
-[Demo_Web](https://agung-mk.github.io/profile/
-)
+[Demo_Web](https://profile.agungtech.web.id)
 
 ## 🧰 Installation
 
