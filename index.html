@@ -426,6 +426,28 @@
             return false;
         }
     };
+
+  // Deteksi iframing
+  if (window !== window.top) {
+    window.top.location = window.location;
+  }
+
+  // Deteksi DevTools dibuka
+  setInterval(function() {
+    const start = new Date();
+    debugger;
+    if (new Date() - start > 100) {
+      window.location.href = "https://google.com"; // redirect kalau curiga
+    }
+  }, 1000);
+
+  // Nonaktifkan klik kanan & inspect element
+  document.addEventListener('contextmenu', event => event.preventDefault());
+  document.onkeydown = function(e) {
+    if (e.key === "F12" || (e.ctrlKey && e.shiftKey && e.key === "I")) {
+      return false;
+    }
+  };
   </script>
  </body>
 </html>
