@@ -1,109 +1,76 @@
-```markdown
-# 🌟 Agung's Professional Profile
+AgungDevX Profile
 
-![Profile Preview](https://files.catbox.moe/ndurdv.jpg)
+Minimalist black & white portfolio website with NextJS-inspired design.
 
-A stunning, animated personal profile website built with *Tailwind CSS* featuring smooth transitions, dark/light mode toggle, and modern UI effects - all in a single HTML file!
+🎨 Design Features
 
-## 🚀 Features
+· Minimalist Aesthetic: Clean black & white color scheme
+· Outline Style: SVG icons with stroke-only design
+· Responsive Layout: Fully responsive across all devices
+· Modern Animations: Subtle fade-in and hover effects
+· Dark/Light Mode: Automatic theme detection
 
-- ✨ *Smooth Theme Transitions* with circle animation effect
-- 🌓 *Dark/Light Mode* toggle with system preference detection
-- 🎭 *Glass Morphism* design elements
-- 🔥 *Animated Components*:
-  - Loading screen animation
-  - Verified badge ripple effect
-  - Theme toggle icon rotation
-  - Hover scale effects
-- 📱 *Fully Responsive* design
-- ⚡ *Optimized Performance* (95+ Lighthouse score)
+📁 File Structure
 
-## 🎨 Design Highlights
-
-html
-<div class="glass-effect dark:glass-effect-light rounded-2xl p-6 shadow-lg">
-  <!-- Glass card content -->
-</div>
+```
+/
+├── index.html              # Main HTML file
+├── robots.txt             # SEO configuration
+└── sitemap.xml            # Sitemap for search engines
 ```
 
-## 🌈 Color Scheme
+🚀 Quick Deployment
 
-| Mode       | Background      | Text       | Primary   | Secondary |
-|------------|----------------|------------|-----------|-----------|
-| **Light**  | `#f9fafb`      | `#1f2937`  | `#0095f6` | `#0077e6` |
-| **Dark**   | `#121218`      | `#f3f4f6`  | `#0095f6` | `#0077e6` |
+1. Upload Files:
+   · Upload index.html to your web server root
+   · Add robots.txt and sitemap.xml for SEO
+2. Customize:
+   · Update personal links in the HTML
+   · Replace profile image URL
+   · Modify meta tags for SEO
+3. Verify:
+   · Check all links work correctly
+   · Test responsive design on mobile
+   · Validate SEO meta tags
 
-## 🛠️ Technologies Used
+🔧 Technologies Used
 
-- ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
-- ![Font Awesome](https://img.shields.io/badge/Font_Awesome-528DD7?style=for-the-badge&logo=font-awesome&logoColor=white)
-- ![Google Fonts](https://img.shields.io/badge/Google_Fonts-4285F4?style=for-the-badge&logo=google-fonts&logoColor=white)
+· HTML5 - Semantic markup
+· Tailwind CSS - Utility-first styling
+· JavaScript - Interactive elements
+· SVG Icons - Outline-style vector graphics
+· JSON-LD - Structured data for SEO
 
-## 🌐 Demo
+📱 Sections Included
 
-Click >> [Demo_Web](https://profile.agungtech.web.id)
+1. Profile Header - Name, photo, verification badge
+2. Skills - Coder, Game, Music tags
+3. Social Links - Instagram, GitHub, Telegram, Spotify
+4. Quick Links - Portfolio, TechBOT, API Docs
+5. Music Status - Spotify integration
+6. Guestbook - Interactive message board
 
-## 🧰 Installation
+🔒 Security Features
 
-Just clone and open `index.html`!
+· Context menu protection
+· Frame-busting script
+· Secure external links (rel="noopener noreferrer")
 
-```bash
-git clone https://github.com/agung-mk/profile.git
-cd profile
-start index.html
-```
+📊 SEO Optimization
 
-## 🌟 Special Effects Code Snippet
+· Complete meta tags (Open Graph, Twitter Cards)
+· JSON-LD structured data
+· Semantic HTML elements
+· Accessible design patterns
+· Lazy-loaded iframes
 
-```javascript
-document.startViewTransition(() => {
-  html.classList.toggle('dark');
-  // Smooth circle animation from center
-});
-```
+🎯 Browser Support
 
-## 📊 Performance
-
-![Lighthouse Score](https://img.shields.io/badge/Lighthouse-98-success)
-
-## 🤝 Contributing
-
-This is a personal profile, but feel free to fork for your own use!
-
-## 📜 License
-
-MIT © [Agung Mahesa](https://agungdev.xyz)
+· Chrome (latest)
+· Firefox (latest)
+· Safari (latest)
+· Edge (latest)
 
 ---
 
-<div align="center">
-  <a href="https://instagram.com/siagungg_">
-    <img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white">
-  </a>
-  <a href="https://github.com/agung-mk">
-    <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white">
-  </a>
-  <a href="https://t.me/agungdev">
-    <img src="https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white">
-  </a>
-</div>
-
-<div>
-
-This README features:
-
-1. **Animated badges** for technologies used
-2. **Colorful sections** with emoji icons
-3. **Code snippets** highlighting key features
-4. **Social media buttons** at the bottom
-5. **Performance metrics** display
-6. **Responsive layout** that looks good on GitHub
-7. **Visual preview** of the profile
-8. **Installation instructions**
-
-The markdown uses GitHub-flavored syntax with:
-- Shields.io badges
-- Emoji icons
-- HTML code blocks
-- Table formatting
-- Embedded image placeholder (replace with your actual demo video)
+Built with simplicity in mind • © 2024 AgungDevX
