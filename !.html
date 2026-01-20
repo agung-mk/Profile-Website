@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Building in Progress | AgungDevX</title>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0a0a0a;
+            --accent: #222;
+            --text: #888;
+            --highlight: #fff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: 'Ubuntu Mono', monospace;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .container {
+            text-align: center;
+            padding: 40px;
+            border: 1px solid var(--accent);
+            border-radius: 8px;
+            max-width: 400px;
+            width: 90%;
+            position: relative;
+        }
+
+        /* Gaya kontur outline profesional */
+        .container::before {
+            content: "";
+            position: absolute;
+            top: -2px; left: -2px; right: -2px; bottom: -2px;
+            border: 1px solid #333;
+            border-radius: 10px;
+            z-index: -1;
+        }
+
+        h1 {
+            color: var(--highlight);
+            font-size: 1.2rem;
+            margin-bottom: 12px;
+            letter-spacing: -0.5px;
+        }
+
+        p {
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin-bottom: 24px;
+        }
+
+        .status {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.8rem;
+            color: #555;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .dot {
+            width: 6px;
+            height: 6px;
+            background-color: #f59e0b; /* Warna orange warning/build */
+            border-radius: 50%;
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.3; }
+            100% { opacity: 1; }
+        }
+
+        .footer {
+            margin-top: 30px;
+            font-size: 0.75rem;
+            border-top: 1px solid var(--accent);
+            padding-top: 20px;
+        }
+
+        a {
+            color: var(--highlight);
+            text-decoration: none;
+            border-bottom: 1px solid #444;
+        }
+
+        a:hover {
+            border-bottom-color: var(--highlight);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="status">
+            <span class="dot"></span>
+            System Status: Under Construction
+        </div>
+        
+        <h1 style="margin-top: 20px;">API Ecosystem is Being Built</h1>
+        <p>I am currently refining the core architecture for a better experience. We'll be live shortly.</p>
+
+        <div class="footer">
+            Back to <a href="https://profile.agungtech.web.id">Profile</a>
+        </div>
+    </div>
+
+</body>
+</html>
