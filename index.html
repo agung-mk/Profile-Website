@@ -3,11 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="view-transition" content="same-origin" />
-    <title>Agung Professional Profile</title>
+    <meta name="description" content="Professional profile of AgungDevX - Coder, Game Enthusiast, and Music Lover">
+    <meta name="keywords" content="AgungDevX, web developer, coder, programmer, portfolio">
+    <meta name="author" content="AgungDevX">
+    <meta property="og:title" content="AgungDevX | Professional Profile">
+    <meta property="og:description" content="Professional profile of AgungDevX - Coder, Game Enthusiast, and Music Lover">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="AgungDevX | Professional Profile">
+    <meta name="twitter:description" content="Professional profile of AgungDevX - Coder, Game Enthusiast, and Music Lover">
+    
+    <title>AgungDevX | Professional Profile</title>
+    
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
     <script>
         tailwind.config = {
             darkMode: 'class',
@@ -16,457 +27,771 @@
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
                     },
-                    colors: {
-                        primary: {
-                            500: '#0095f6', // Warna biru Instagram
-                            600: '#0077e6',
-                        },
-                        dark: {
-                            800: '#1e1e2d',
-                            900: '#121218',
-                        }
+                    animation: {
+                        'fade-in': 'fadeIn 0.5s ease-out',
+                        'fade-in-up': 'fadeInUp 0.6s ease-out',
+                        'slide-up': 'slideUp 0.5s ease-out',
+                        'rotate': 'rotate 0.5s ease-in-out',
+                        'circle-expand': 'circleExpand 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards',
+                        'ripple': 'ripple 1s ease-out infinite',
+                        'telegram-verified': 'telegramVerified 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55)',
                     },
                     keyframes: {
-                        'fade-in-up': {
-                            '0%': { opacity: '0', transform: 'translateY(10px)' },
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
                             '100%': { opacity: '1', transform: 'translateY(0)' },
                         },
-                        'rotate': {
+                        slideUp: {
+                            '0%': { transform: 'translateY(10px)' },
+                            '100%': { transform: 'translateY(0)' },
+                        },
+                        rotate: {
                             '0%': { transform: 'rotate(0deg)' },
                             '100%': { transform: 'rotate(360deg)' },
                         },
-                        'telegram-verified': {
+                        circleExpand: {
+                            from: { transform: 'scale(0)' },
+                            to: { transform: 'scale(3)' },
+                        },
+                        ripple: {
+                            '0%': { transform: 'scale(0.5)', opacity: '1' },
+                            '100%': { transform: 'scale(2.5)', opacity: '0' },
+                        },
+                        telegramVerified: {
                             '0%': { transform: 'scale(1)' },
                             '50%': { transform: 'scale(1.2)' },
                             '100%': { transform: 'scale(1)' },
-                        },
-                        'ripple': {
-                            '0%': { transform: 'scale(0.5)', opacity: '1' },
-                            '100%': { transform: 'scale(2.5)', opacity: '0' },
                         }
                     },
-                    animation: {
-                        'fade-in-up': 'fade-in-up 0.5s ease-out',
-                        'rotate': 'rotate 0.5s ease-in-out',
-                        'telegram-verified': 'telegram-verified 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55)',
-                        'ripple': 'ripple 1s ease-out infinite',
-                    }                                
                 }
             }
         }
     </script>
-    <style type="text/tailwindcss">
-        @layer utilities {
-            .text-gradient {
-                @apply bg-gradient-to-r from-primary-500 to-blue-600 bg-clip-text text-transparent;
+    
+    <style>
+        /* Custom CSS untuk efek outline dan minimalis */
+        :root {
+            --border-color: #e5e5e5;
+            --text-color: #171717;
+            --bg-color: #ffffff;
+        }
+        
+        .dark {
+            --border-color: #404040;
+            --text-color: #f5f5f5;
+            --bg-color: #0a0a0a;
+        }
+        
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            transition: background-color 0.5s ease, color 0.5s ease;
+        }
+        
+        .outline-card {
+            border: 1px solid var(--border-color);
+            background-color: transparent;
+            transition: all 0.3s ease;
+        }
+        
+        .outline-card:hover {
+            border-color: var(--text-color);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+        
+        .dark .outline-card:hover {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+        
+        .outline-btn {
+            border: 1px solid var(--border-color);
+            background-color: transparent;
+            color: var(--text-color);
+            transition: all 0.3s ease;
+        }
+        
+        .outline-btn:hover {
+            border-color: var(--text-color);
+            background-color: rgba(0, 0, 0, 0.02);
+        }
+        
+        .dark .outline-btn:hover {
+            background-color: rgba(255, 255, 255, 0.02);
+        }
+        
+        .section-divider {
+            border-top: 1px solid var(--border-color);
+        }
+        
+        .social-icon {
+            stroke: currentColor;
+            fill: none;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+        
+        /* Loading animation */
+        .loading-dots {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .loading-dots span {
+            width: 6px;
+            height: 6px;
+            margin: 0 2px;
+            background-color: currentColor;
+            border-radius: 50%;
+            animation: loading-dots 1.4s infinite ease-in-out both;
+        }
+        
+        .loading-dots span:nth-child(1) {
+            animation-delay: -0.32s;
+        }
+        
+        .loading-dots span:nth-child(2) {
+            animation-delay: -0.16s;
+        }
+        
+        @keyframes loading-dots {
+            0%, 80%, 100% {
+                opacity: 0.3;
+                transform: scale(0.8);
             }
-            .card-hover {
-                @apply transition-all duration-300 hover:scale-[1.02] hover:shadow-xl;
+            40% {
+                opacity: 1;
+                transform: scale(1);
             }
-            .glass-effect {
-                @apply bg-white/5 backdrop-blur-sm border border-white/10;
+        }
+        
+        /* Theme toggle animation */
+        .theme-toggle-container {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            z-index: 50;
+        }
+        
+        .theme-toggle-btn {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            border: 1px solid var(--border-color);
+            background-color: var(--bg-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .theme-toggle-btn:hover {
+            border-color: var(--text-color);
+            transform: scale(1.05);
+        }
+        
+        .theme-icon {
+            width: 20px;
+            height: 20px;
+            stroke: currentColor;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            fill: none;
+        }
+        
+        #sunIcon, #moonIcon {
+            transition: transform 0.5s ease;
+        }
+        
+        /* Verification overlay */
+        .verification-overlay {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+        
+        .dark .verification-overlay {
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+        
+        /* Circle expand animation for theme toggle */
+        .circle-expand {
+            position: fixed;
+            border-radius: 50%;
+            background-color: var(--text-color);
+            transform: scale(0);
+            z-index: 9999;
+            pointer-events: none;
+            mix-blend-mode: difference;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 640px) {
+            .profile-img {
+                width: 100px;
+                height: 100px;
             }
-            .glass-effect-light {
-                @apply bg-black/5 backdrop-blur-sm border border-black/10;
+            
+            .theme-toggle-container {
+                bottom: 20px;
+                right: 20px;
             }
-            .verified-badge {
-                @apply bg-primary-500 text-white rounded-full flex items-center justify-center cursor-pointer;
+            
+            .theme-toggle-btn {
+                width: 44px;
+                height: 44px;
             }
-            .verified-badge-light {
-                @apply bg-blue-500 text-white rounded-full flex items-center justify-center cursor-pointer;
-            }
-                /* Glass effect yang lebih profesional */
-            .glass-effect-dark {
-                @apply bg-dark-800/80 backdrop-blur-sm border border-white/10 shadow-lg;
-            }
-            .glass-effect-light {
-                @apply bg-white/80 backdrop-blur-sm border border-black/10 shadow-lg;
-            }
-            /* Verified badge yang lebih konsisten */
-            .verified-badge-dark {
-                @apply bg-primary-500 text-white rounded-full flex items-center justify-center cursor-pointer;
-            }
-            .verified-badge-light {
-                @apply bg-blue-600 text-white rounded-full flex items-center justify-center cursor-pointer;
-            }
-            .circle-expand {
-                @apply fixed rounded-full bg-primary-500 dark:bg-blue-600;
-                transform: scale(0);
-                z-index: 9999;
-                pointer-events: none;
-            }            
-            @keyframes circle-expand {
-                0% {
-                    transform: scale(0);
-                    opacity: 1;
-                }
-                100% {
-                    transform: scale(3);
-                    opacity: 0;
-                }
-            }
-            .animate-circle-expand {
-                animation: circle-expand 0.6s ease-out forwards;
-            }
-            ::view-transition {
-                isolation: isolate;
-            }
-            ::view-transition-old(root),
-            ::view-transition-new(root) {
-              mix-blend-mode: normal;
-              animation: none;
-            }
-            ::view-transition-new(root) {
-              view-transition-name: none;
-              mask: radial-gradient(
-                circle at center,
-                white 0%,
-                white var(--circle-size, 0%),
-                transparent var(--circle-size, 0%),
-                transparent 100%
-              );
-              animation: circle-expand 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-            }
-            @keyframes circle-expand {
-              from {
-                --circle-size: 0%;
-              }
-              to {
-                --circle-size: 200%;
-              }
-            }            
-            @supports not (view-transition-name: none) {
-              body {
-                transition: background-color 0.5s ease, color 0.5s ease;
-              }
+        }
+        
+        /* View transition support */
+        @supports (view-transition-name: none) {
+            ::view-transition-group(root) {
+                animation-duration: 0.5s;
             }
         }
     </style>
 </head>
-<body class="bg-dark-900 text-gray-100 min-h-screen font-sans dark:bg-gray-50 dark:text-gray-800 transition-colors duration-300">
- 
-   <!-- Loading Screen -->
-    <div id="loadingScreen" class="fixed inset-0 bg-dark-900 dark:bg-gray-50 z-50 flex flex-col items-center justify-center transition-colors duration-300">
-      <img src="https://i.gifer.com/Xqg8.gif" alt="Loading" class="w-35 h-35">
-   <!--   <p class="mt-4 text-gray-400 dark:text-gray-600">Loading...</p>  -->
+<body class="font-sans antialiased min-h-screen">
+
+    <!-- Loading Screen -->
+    <div id="loadingScreen" class="fixed inset-0 bg-white dark:bg-black z-50 flex flex-col items-center justify-center transition-colors duration-300">
+        <div class="loading-dots mb-4">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <p class="text-sm tracking-wide">LOADING</p>
     </div>
 
-    <!-- Main Content (hidden initially) -->
+    <!-- Verification Overlay -->
+    <div id="verificationOverlay" class="verification-overlay fixed inset-0 z-40 flex items-center justify-center hidden">
+        <div class="relative">
+            <div class="absolute inset-0 flex items-center justify-center">
+                <div class="w-32 h-32 rounded-full border border-current opacity-20 animate-ripple"></div>
+                <div class="w-32 h-32 rounded-full border border-current opacity-20 animate-ripple" style="animation-delay: 0.3s;"></div>
+                <div class="w-32 h-32 rounded-full border border-current opacity-20 animate-ripple" style="animation-delay: 0.6s;"></div>
+            </div>
+            <div class="relative z-50 outline-card p-8 rounded-2xl text-center max-w-sm mx-4 backdrop-blur-sm">
+                <div class="w-20 h-20 border-2 border-current rounded-full flex items-center justify-center mx-auto mb-4 animate-telegram-verified">
+                    <svg class="social-icon w-10 h-10" viewBox="0 0 24 24">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                        <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-bold">Verified Account</h3>
+                <p class="mt-2 text-gray-600 dark:text-gray-400">This is a verified website. All authentic content and can be trusted.</p>
+                <button id="closeVerification" class="mt-6 px-6 py-2 outline-btn rounded-full hover:border-current transition-colors">Got it</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
     <div id="mainContent" class="hidden">
         <!-- Theme Toggle Button -->
-        <div id="themeToggle" class="fixed bottom-6 right-6 z-30 animate-fade-in-up opacity-0">
-            <button class="w-12 h-12 rounded-full bg-dark-800 dark:bg-gray-200 shadow-lg flex items-center justify-center transition-all duration-300 hover:scale-110 focus:outline-none">
-                <svg id="sunIcon" class="w-6 h-6 text-yellow-400 rotate-0 transition-transform duration-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+        <div class="theme-toggle-container animate-fade-in">
+            <button id="themeToggle" class="theme-toggle-btn">
+                <svg id="sunIcon" class="theme-icon hidden" viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="5"></circle>
+                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
                 </svg>
-                <svg id="moonIcon" class="w-6 h-6 text-blue-800 rotate-0 transition-transform duration-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                <svg id="moonIcon" class="theme-icon" viewBox="0 0 24 24">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
                 </svg>
             </button>
         </div>
 
-        <!-- Verification Animation Elements -->
-       <div id="verificationOverlay" class="fixed inset-0 bg-black/70 z-40 flex items-center justify-center hidden">
-    <div class="relative">
-        <div class="absolute inset-0 flex items-center justify-center">
-            <div class="w-32 h-32 rounded-full bg-blue-500/20 animate-ripple"></div>
-            <div class="w-32 h-32 rounded-full bg-blue-500/20 animate-ripple" style="animation-delay: 0.3s;"></div>
-            <div class="w-32 h-32 rounded-full bg-blue-500/20 animate-ripple" style="animation-delay: 0.6s;"></div>
-        </div>
-        <div class="relative z-50 glass-effect-dark dark:glass-effect-light p-8 rounded-2xl shadow-2xl text-center max-w-sm mx-4">
-            <div class="w-20 h-20 bg-primary-500 dark:bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4 animate-telegram-verified">
-                <i class="fas fa-check text-3xl text-white"></i>
-            </div>
-            <h3 class="text-xl font-bold dark:text-gray-900">Verified Account</h3>
-            <p class="mt-2 text-gray-300 dark:text-gray-700">This is a verified website. All authentic content and can be trusted.</p>
-            <button id="closeVerification" class="mt-6 px-6 py-2 bg-primary-500 dark:bg-blue-600 text-white rounded-full hover:bg-primary-600 dark:hover:bg-blue-700 transition-colors">Got it</button>
-        </div>
-    </div>
-</div>
-
-        <!-- Hero Section -->
-        <div class="relative overflow-hidden">
-            <div class="absolute inset-0 bg-gradient-to-b from-black/80 to-dark-900 dark:from-black/60 dark:to-gray-50 z-10"></div>
-            <img alt="Cover image" class="w-full h-64 md:h-80 object-cover object-center" src="https://files.catbox.moe/tobewj.jpg">
-                        
-        <!-- Profile Content -->
-        <div class="container mx-auto px-4 max-w-2xl -mt-12 relative z-20">
-            <!-- Profile Card -->
-            <div class="glass-effect dark:glass-effect-light rounded-2xl p-6 shadow-lg">
-                <div class="flex flex-col items-center">
-                    <div class="relative">
-                        <img alt="Profile picture" class="w-24 h-24 md:w-28 md:h-28 rounded-full border-4 border-dark-800 dark:border-gray-200" src="https://files.catbox.moe/ndurdv.jpg">
+        <!-- Header -->
+        <header class="py-6 px-4 md:px-8 max-w-4xl mx-auto animate-fade-in">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-2">
+                    <div class="w-8 h-8 flex items-center justify-center">
+                        <svg class="social-icon w-6 h-6" viewBox="0 0 24 24">
+                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                        </svg>
                     </div>
-                    
-                    <!-- Nama dengan centang biru Instagram -->
-                    <div class="flex items-center justify-center mt-4">
-                        <h1 class="text-2xl md:text-3xl font-bold">Agung</h1>
-                        <div id="verifiedBadge" class="verified-badge dark:verified-badge-light w-5 h-5 ml-2" style="transform: translateY(-1px);">
-                            <i class="fas fa-check text-xs"></i>
-                        </div>
-                    </div>
-                    
-                    <p class="text-gray-400 dark:text-gray-600 mt-1">Right now I just do what I'm interested in.</p>
-                    
-                    <!-- Skills -->
-                    <div class="flex flex-wrap justify-center gap-4 mt-4">
-                        <div class="flex items-center bg-dark-800 dark:bg-gray-200 px-3 py-1 rounded-full">
-                            <i class="fas fa-laptop-code text-primary-500 dark:text-blue-600 mr-2"></i>
-                            <span>Coder</span>
-                        </div>
-                        <div class="flex items-center bg-dark-800 dark:bg-gray-200 px-3 py-1 rounded-full">
-                            <i class="fas fa-gamepad text-green-500 mr-2"></i>
-                            <span>Game</span>
-                        </div>
-                        <div class="flex items-center bg-dark-800 dark:bg-gray-200 px-3 py-1 rounded-full">
-                            <i class="fas fa-music text-purple-500 mr-2"></i>
-                            <span>Music</span>
-                        </div>
-                    </div>
-                    
-                    <!-- Social Links -->
-                    <div class="flex space-x-5 mt-6">
-                        <a href="https://instagram.com/siagungg_" class="text-xl hover:text-primary-500 dark:hover:text-blue-600 transition-colors">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="https://github.com/agung-mk" class="text-xl hover:text-gray-300 dark:hover:text-gray-600 transition-colors">
-                            <i class="fab fa-github"></i>
-                        </a>
-                        <a href="https://t.me/agungdev" class="text-xl hover:text-green-500 transition-colors">
-                            <i class="fab fa-telegram"></i>
-                        </a>
-                        <a href="https://open.spotify.com/playlist/0n6nan55XVDcV6X4AOwwkN?si=HJIOVhmhTEWEzjbrc1LOLQ" class="text-xl hover:text-green-500 transition-colors">
-                            <i class="fab fa-spotify"></i>
-                        </a>
-                    </div>
+                    <span class="font-semibold text-lg">AgungDevX</span>
+                </div>
+                <div class="text-xs text-gray-500 dark:text-gray-400">
+                    <span id="currentDate"></span>
                 </div>
             </div>
+        </header>
+
+        <!-- Main Section -->
+        <main class="px-4 md:px-8 max-w-4xl mx-auto pb-16">
+            <!-- Profile Section -->
+            <section class="mb-12 animate-fade-in-up">
+                <div class="outline-card rounded-2xl p-6 md:p-8">
+                    <div class="flex flex-col md:flex-row items-center md:items-start space-y-6 md:space-y-0 md:space-x-8">
+                        <!-- Profile Image -->
+                        <div class="relative">
+                            <div class="profile-img w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden outline-card border-2">
+                                <img 
+                                    src="https://files.catbox.moe/ndurdv.jpg" 
+                                    alt="Agung Profile Picture" 
+                                    class="w-full h-full object-cover"
+                                    onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMTAwIiBjeT0iMTAwIiByPSI5OCIgc3Ryb2tlPSIjZTBlMGUwIiBzdHJva2Utd2lkdGg9IjIiLz48cGF0aCBkPSJNMTMwLDEyMGMwLDE2LjU2LTEzLjQ0LDMwLTMwLDMwcy0zMC0xMy40NC0zMC0zMGMwLTE2LjU2LDEzLjQ0LTMwLDMwLTMwczMwLDEzLjQ0LDMwLDMwWiIgc3Ryb2tlPSIjZTBlMGUwIiBzdHJva2Utd2lkdGg9IjIiLz48Y2lyY2xlIGN4PSIxMDAiIGN5PSI4MCIgcj0iMjAiIHN0cm9rZT0iI2UwZTBlMCIgc3Ryb2tlLXdpZHRoPSIyIi8+PC9zdmc+'"
+                                >
+                            </div>
+                            <div class="absolute -bottom-2 -right-2 w-10 h-10 bg-white dark:bg-black rounded-full flex items-center justify-center outline-card border cursor-pointer"
+                                 id="verifiedBadge">
+                                <svg class="social-icon w-5 h-5" viewBox="0 0 24 24">
+                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                                </svg>
+                            </div>
+                        </div>
+
+                        <!-- Profile Info -->
+                        <div class="flex-1 text-center md:text-left">
+                            <div class="flex items-center justify-center md:justify-start mb-2">
+                                <h1 class="text-2xl md:text-3xl font-bold mr-2">AgungDevX</h1>
+                            </div>
+                            <p class="text-gray-600 dark:text-gray-400 mb-4 max-w-md">
+                                Right now I just do what I'm interested in — coding, gaming, and music.
+                            </p>
+                            
+                            <!-- Skills -->
+                            <div class="flex flex-wrap gap-2 justify-center md:justify-start mb-6">
+                                <div class="outline-btn px-3 py-1 rounded-full text-sm flex items-center">
+                                    <svg class="social-icon w-4 h-4 mr-1" viewBox="0 0 24 24">
+                                        <polyline points="16 18 22 12 16 6"></polyline>
+                                        <polyline points="8 6 2 12 8 18"></polyline>
+                                    </svg>
+                                    <span>Coder</span>
+                                </div>
+                                <div class="outline-btn px-3 py-1 rounded-full text-sm flex items-center">
+                                    <svg class="social-icon w-4 h-4 mr-1" viewBox="0 0 24 24">
+                                        <rect x="2" y="6" width="20" height="12" rx="2"></rect>
+                                        <path d="M12 12h.01"></path>
+                                    </svg>
+                                    <span>Game</span>
+                                </div>
+                                <div class="outline-btn px-3 py-1 rounded-full text-sm flex items-center">
+                                    <svg class="social-icon w-4 h-4 mr-1" viewBox="0 0 24 24">
+                                        <path d="M9 18V5l12-2v13"></path>
+                                        <circle cx="6" cy="18" r="3"></circle>
+                                        <circle cx="18" cy="16" r="3"></circle>
+                                    </svg>
+                                    <span>Music</span>
+                                </div>
+                            </div>
+                            
+                            <!-- Social Links -->
+                            <div class="flex space-x-4 justify-center md:justify-start">
+                                <a href="https://instagram.com/agungdevx" target="_blank" rel="noopener noreferrer" 
+                                   class="outline-btn w-10 h-10 rounded-full flex items-center justify-center hover:border-current">
+                                    <svg class="social-icon w-5 h-5" viewBox="0 0 24 24">
+                                        <rect x="2" y="2" width="20" height="20" rx="5"></rect>
+                                        <circle cx="12" cy="12" r="5"></circle>
+                                        <circle cx="18" cy="6" r="1"></circle>
+                                    </svg>
+                                </a>
+                                <a href="https://github.com/agungdevx" target="_blank" rel="noopener noreferrer"
+                                   class="outline-btn w-10 h-10 rounded-full flex items-center justify-center hover:border-current">
+                                    <svg class="social-icon w-5 h-5" viewBox="0 0 24 24">
+                                        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                                    </svg>
+                                </a>
+                                <a href="https://t.me/agungdevx" target="_blank" rel="noopener noreferrer"
+                                   class="outline-btn w-10 h-10 rounded-full flex items-center justify-center hover:border-current">
+                                    <svg class="social-icon w-5 h-5" viewBox="0 0 24 24">
+                                        <path d="M21 5L2 12.5l7 1M21 5l-2.5 15L9 13.5M21 5L9 13.5m0 0V19l3.5-4.5"></path>
+                                    </svg>
+                                </a>
+                                <a href="https://open.spotify.com/playlist/0n6nan55XVDcV6X4AOwwkN?si=HJIOVhmhTEWEzjbrc1LOLQ" target="_blank" rel="noopener noreferrer"
+                                   class="outline-btn w-10 h-10 rounded-full flex items-center justify-center hover:border-current">
+                                    <svg class="social-icon w-5 h-5" viewBox="0 0 24 24">
+                                        <circle cx="12" cy="12" r="10"></circle>
+                                        <path d="M8 12c0 1.38.72 2.5 1.71 3.15.5.33 1.1.55 1.79.55.69 0 1.29-.22 1.79-.55.99-.65 1.71-1.77 1.71-3.15s-.72-2.5-1.71-3.15c-.5-.33-1.1-.55-1.79-.55-.69 0-1.29.22-1.79.55C8.72 9.5 8 10.62 8 12z"></path>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
             <!-- Links Section -->
-            <div class="mt-8 space-y-4">
-                <h2 class="text-xl font-bold text-gradient"></h2>
+            <section class="mb-12 animate-fade-in-up" style="animation-delay: 0.1s">
+                <h2 class="text-xl font-semibold mb-4 flex items-center">
+                    <svg class="social-icon w-5 h-5 mr-2" viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="12" y1="8" x2="12" y2="16"></line>
+                        <line x1="8" y1="12" x2="16" y2="12"></line>
+                    </svg>
+                    Quick Links
+                </h2>
                 
-                <a href="https://agungdev.my.id" class="card-hover glass-effect dark:glass-effect-light rounded-xl p-4 flex items-center">
-                    <div class="bg-blue-500/10 dark:bg-blue-600/10 p-3 rounded-lg">
-                        <i class="fas fa-globe text-blue-500 dark:text-blue-600"></i>
-                    </div>
-                    <div class="ml-4 flex-1">
-                        <h3 class="font-semibold">Personal Website</h3>
-                        <p class="text-sm text-gray-400 dark:text-gray-600">Explore my blog, projects, and more about me.</p>
-                    </div>
-                    <i class="fas fa-chevron-right text-gray-500 dark:text-gray-400"></i>
-                </a>
-                
-                <a href="https://whatsapp.com/channel/0029VaZOxqh2phHOGFM59V1j" class="card-hover glass-effect dark:glass-effect-light rounded-xl p-4 flex items-center">
-                    <div class="bg-red-500/10 dark:bg-red-600/10 p-3 rounded-lg">
-                        <i class="fas fa-robot text-red-500 dark:text-red-600"></i>
-                    </div>
-                    <div class="ml-4 flex-1">
-                        <h3 class="font-semibold">TechBOT - Bot in WhatsApp</h3>
-                        <p class="text-sm text-gray-400 dark:text-gray-600">Multifunctional Bots can do amazing things</p>
-                    </div>
-                    <i class="fas fa-chevron-right text-gray-500 dark:text-gray-400"></i>
-                </a>
-                
-                  <a href="/" class="card-hover glass-effect dark:glass-effect-light rounded-xl p-4 flex items-center">
-                    <div class="bg-blue-500/10 dark:bg-blue-600/10 p-3 rounded-lg">
-                        <i class="fas fa-code text-blue-500 dark:text-blue-400 text-lg"></i>
-                    </div>
-                    <div class="ml-4 flex-1">
-                        <h3 class="font-semibold">API Documentation</h3>
-                        <p class="text-sm text-gray-400 dark:text-gray-600">Complete API reference and guides</p>
-                    </div>
-                    <i class="fas fa-chevron-right text-gray-500 dark:text-gray-400"></i>
-                </a>
-            </div>
-
-            <!-- Spotify Section -->
-            <div class="glass-effect dark:glass-effect-light rounded-xl p-4 mt-6 text-center">
-                <p class="text-sm text-gray-400 dark:text-gray-600">See what I'm currently listening on Spotify</p>
-                <div class="flex items-center justify-center mt-2">
-                    <i class="fab fa-spotify text-green-500 mr-2"></i>
-                    <span>No listening to anything</span>
+                <div class="space-y-3">
+                    <a href="https://agungdevx.my.id" target="_blank" rel="noopener noreferrer" 
+                       class="outline-card rounded-xl p-4 flex items-center animate-slide-up">
+                        <div class="w-10 h-10 rounded-lg flex items-center justify-center border mr-4">
+                            <svg class="social-icon w-5 h-5" viewBox="0 0 24 24">
+                                <path d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path>
+                            </svg>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="font-medium">Personal Website Portfolio</h3>
+                            <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">Explore my blog, projects, and more about me</p>
+                        </div>
+                        <svg class="social-icon w-4 h-4 ml-2" viewBox="0 0 24 24">
+                            <polyline points="9 18 15 12 9 6"></polyline>
+                        </svg>
+                    </a>
+                    
+                    <a href="https://lynk.id/techbot" target="_blank" rel="noopener noreferrer" 
+                       class="outline-card rounded-xl p-4 flex items-center animate-slide-up" style="animation-delay: 0.05s">
+                        <div class="w-10 h-10 rounded-lg flex items-center justify-center border mr-4">
+                            <svg class="social-icon w-5 h-5" viewBox="0 0 24 24">
+                                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+                            </svg>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="font-medium">TechBOT - Bot in WhatsApp</h3>
+                            <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">Multifunctional Bots can do amazing things</p>
+                        </div>
+                        <svg class="social-icon w-4 h-4 ml-2" viewBox="0 0 24 24">
+                            <polyline points="9 18 15 12 9 6"></polyline>
+                        </svg>
+                    </a>
+                    
+                    <a href="/!.html" class="outline-card rounded-xl p-4 flex items-center animate-slide-up" style="animation-delay: 0.1s">
+                        <div class="w-10 h-10 rounded-lg flex items-center justify-center border mr-4">
+                            <svg class="social-icon w-5 h-5" viewBox="0 0 24 24">
+                                <polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5 12 2"></polygon>
+                                <line x1="12" y1="22" x2="12" y2="15.5"></line>
+                                <polyline points="22 8.5 12 15.5 2 8.5"></polyline>
+                                <polyline points="2 15.5 12 8.5 22 15.5"></polyline>
+                                <line x1="12" y1="2" x2="12" y2="8.5"></line>
+                            </svg>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="font-medium">API Documentation</h3>
+                            <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">Complete API reference and guides</p>
+                        </div>
+                        <svg class="social-icon w-4 h-4 ml-2" viewBox="0 0 24 24">
+                            <polyline points="9 18 15 12 9 6"></polyline>
+                        </svg>
+                    </a>
                 </div>
+            </section>
+
+            <!-- Music Section -->
+            <section class="mb-12 animate-fade-in-up" style="animation-delay: 0.2s">
+                <div class="outline-card rounded-xl p-6">
+                    <div class="flex items-center mb-4">
+                        <svg class="social-icon w-5 h-5 mr-2" viewBox="0 0 24 24">
+                            <path d="M9 18V5l12-2v13"></path>
+                            <circle cx="6" cy="18" r="3"></circle>
+                            <circle cx="18" cy="16" r="3"></circle>
+                        </svg>
+                        <h2 class="text-xl font-semibold">Currently Listening</h2>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-400 mb-3">See what I'm currently listening on Spotify</p>
+                    <div class="flex items-center p-3 border rounded-lg">
+                        <svg class="social-icon w-5 h-5 mr-3" viewBox="0 0 24 24">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <path d="M8 12c0 1.38.72 2.5 1.71 3.15.5.33 1.1.55 1.79.55.69 0 1.29-.22 1.79-.55.99-.65 1.71-1.77 1.71-3.15s-.72-2.5-1.71-3.15c-.5-.33-1.1-.55-1.79-.55-.69 0-1.29.22-1.79.55C8.72 9.5 8 10.62 8 12z"></path>
+                        </svg>
+                        <div class="flex-1">
+                            <p class="font-medium">Not currently playing</p>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">Spotify • Last played: Recently</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Guestbook Section -->
+            <section class="animate-fade-in-up" style="animation-delay: 0.3s">
+                <div class="outline-card rounded-xl p-6">
+                    <div class="flex items-center mb-4">
+                        <svg class="social-icon w-5 h-5 mr-2" viewBox="0 0 24 24">
+                            <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+                        </svg>
+                        <h2 class="text-xl font-semibold">Guestbook</h2>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-400 mb-4">Leave a message or say hello!</p>
+                    <div class="rounded-lg overflow-hidden border">
+                        <iframe 
+                            src="https://www5.cbox.ws/box/?boxid=957068&boxtag=pt44dr" 
+                            width="100%" 
+                            height="400" 
+                            allowtransparency="yes" 
+                            allow="autoplay" 
+                            frameborder="0" 
+                            marginheight="0" 
+                            marginwidth="0" 
+                            scrolling="auto"
+                            class="w-full h-[400px] border-0"
+                            title="Guestbook"
+                            loading="lazy">
+                        </iframe>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="section-divider pt-8 pb-6 px-4 md:px-8 max-w-4xl mx-auto">
+            <div class="text-center text-sm text-gray-600 dark:text-gray-400">
+                <p>© <span id="currentYear"></span> AgungDevX. All rights reserved.</p>
+                <p class="mt-1">Built with simplicity in mind</p>
             </div>
-            
-           <!-- Guestbook Section -->
-<div class="glass-effect dark:glass-effect-light rounded-xl p-4 mt-6">
-    <div class="rounded-xl overflow-hidden shadow-md">
-        <iframe 
-            src="https://www5.cbox.ws/box/?boxid=957068&boxtag=pt44dr" 
-            width="100%" 
-            height="450" 
-            allowtransparency="yes" 
-            allow="autoplay" 
-            frameborder="0" 
-            marginheight="0" 
-            marginwidth="0" 
-            scrolling="auto"
-            class="w-full h-[450px] border-0 rounded-xl">
-        </iframe>
-    </div>
-</div>
-
-            <!-- Footer -->
-            <div class="text-center text-gray-500 dark:text-gray-600 text-sm mt-8 pb-8">
-                <p>© 2025 Agung Mahesa. All rights reserved.</p>
-            </div>
-        </div>
+        </footer>
     </div>
 
- <script>
-    // Simulate loading for 3 seconds then show content
-    setTimeout(() => {
-        document.getElementById('loadingScreen').classList.add('hidden');
-        document.getElementById('mainContent').classList.remove('hidden');
-        
-        // Animate theme toggle button
-        const themeToggle = document.getElementById('themeToggle');
-        setTimeout(() => {
-            themeToggle.classList.remove('opacity-0');
-            themeToggle.style.animation = 'fade-in-up 0.5s ease-out forwards';
-        }, 100);
-    }, 3000);
-
-    // Smooth Theme Transition Functions
-    async function toggleTheme() {
-        // Skip animation if not supported
-        if (!document.startViewTransition) {
-            applyThemeChange();
-            return;
-        }
-
-        // Start smooth transition
-        const transition = document.startViewTransition(() => {
-            applyThemeChange();
-        });
-
-        try {
-            // Wait for animations to be ready
-            await transition.ready;
+    <!-- JavaScript -->
+    <script>
+        // Set current date and year
+        document.addEventListener('DOMContentLoaded', function() {
+            const now = new Date();
+            const options = { year: 'numeric', month: 'short', day: 'numeric' };
+            document.getElementById('currentDate').textContent = now.toLocaleDateString('en-US', options);
+            document.getElementById('currentYear').textContent = now.getFullYear();
             
-            // Animate from center of screen
-            const x = window.innerWidth / 2;
-            const y = window.innerHeight / 2;
-            const endRadius = Math.hypot(
-                Math.max(x, window.innerWidth - x),
-                Math.max(y, window.innerHeight - y)
-            );
+            // Hide loading screen and show content after a short delay
+            setTimeout(() => {
+                document.getElementById('loadingScreen').classList.add('opacity-0');
+                document.getElementById('mainContent').classList.remove('hidden');
+                
+                // Remove loading screen from DOM after fade out
+                setTimeout(() => {
+                    document.getElementById('loadingScreen').remove();
+                }, 300);
+            }, 800);
             
-            document.documentElement.animate(
-                {
-                    clipPath: [
-                        `circle(0 at ${x}px ${y}px)`,
-                        `circle(${endRadius}px at ${x}px ${y}px)`
-                    ],
-                },
-                {
-                    duration: 800,
-                    easing: 'cubic-bezier(0.4, 0, 0.2, 1)',
-                    pseudoElement: '::view-transition-new(root)'
+            // Add click effects to interactive elements
+            document.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    if (this.getAttribute('href') === '#') {
+                        e.preventDefault();
+                    }
+                });
+            });
+            
+            // Initialize theme
+            initializeTheme();
+            
+            // Add keyboard shortcuts
+            document.addEventListener('keydown', function(e) {
+                // Toggle theme with Ctrl/Cmd + T
+                if ((e.ctrlKey || e.metaKey) && e.key === 't') {
+                    e.preventDefault();
+                    toggleTheme();
                 }
-            );
-        } catch (err) {
-            console.error('Transition failed:', err);
-            applyThemeChange();
+            });
+            
+            // Verified badge functionality
+            const verifiedBadge = document.getElementById('verifiedBadge');
+            const verificationOverlay = document.getElementById('verificationOverlay');
+            const closeVerification = document.getElementById('closeVerification');
+            
+            if (verifiedBadge && verificationOverlay && closeVerification) {
+                verifiedBadge.addEventListener('click', () => {
+                    verificationOverlay.classList.remove('hidden');
+                    document.body.style.overflow = 'hidden';
+                });
+                
+                closeVerification.addEventListener('click', () => {
+                    verificationOverlay.classList.add('hidden');
+                    document.body.style.overflow = '';
+                });
+                
+                // Close verification overlay when clicking outside
+                verificationOverlay.addEventListener('click', (e) => {
+                    if (e.target === verificationOverlay) {
+                        verificationOverlay.classList.add('hidden');
+                        document.body.style.overflow = '';
+                    }
+                });
+            }
+        });
+        
+        // Theme management functions
+        function initializeTheme() {
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const savedTheme = localStorage.getItem('theme');
+            
+            if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+                document.documentElement.classList.add('dark');
+                updateThemeIcons('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+                updateThemeIcons('light');
+            }
+            
+            // Set up theme toggle button
+            const themeToggle = document.getElementById('themeToggle');
+            if (themeToggle) {
+                themeToggle.addEventListener('click', toggleTheme);
+            }
+            
+            // Detect system theme changes
+            window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+                if (!localStorage.getItem('theme')) {
+                    if (e.matches) {
+                        document.documentElement.classList.add('dark');
+                        updateThemeIcons('dark');
+                    } else {
+                        document.documentElement.classList.remove('dark');
+                        updateThemeIcons('light');
+                    }
+                }
+            });
         }
-    }
-
-    function applyThemeChange() {
-        const html = document.documentElement;
         
-        // Toggle theme
-        html.classList.toggle('dark');
+        function updateThemeIcons(theme) {
+            const sunIcon = document.getElementById('sunIcon');
+            const moonIcon = document.getElementById('moonIcon');
+            
+            if (theme === 'dark') {
+                sunIcon?.classList.remove('hidden');
+                moonIcon?.classList.add('hidden');
+            } else {
+                sunIcon?.classList.add('hidden');
+                moonIcon?.classList.remove('hidden');
+            }
+        }
         
-        // Update icons
-        const sunIcon = document.getElementById('sunIcon');
-        const moonIcon = document.getElementById('moonIcon');
-        
-        if (html.classList.contains('dark')) {
-            sunIcon.classList.add('animate-rotate');
+        function toggleTheme() {
+            const isDark = document.documentElement.classList.contains('dark');
+            
+            // Create circle expand animation
+            createCircleExpandAnimation();
+            
+            // Toggle theme after a short delay
             setTimeout(() => {
-                sunIcon.classList.remove('animate-rotate');
-                sunIcon.classList.add('hidden');
-                moonIcon.classList.remove('hidden');
-            }, 500);
-        } else {
-            moonIcon.classList.add('animate-rotate');
-            setTimeout(() => {
-                moonIcon.classList.remove('animate-rotate');
-                moonIcon.classList.add('hidden');
-                sunIcon.classList.remove('hidden');
-            }, 500);
+                if (isDark) {
+                    document.documentElement.classList.remove('dark');
+                    localStorage.setItem('theme', 'light');
+                    updateThemeIcons('light');
+                } else {
+                    document.documentElement.classList.add('dark');
+                    localStorage.setItem('theme', 'dark');
+                    updateThemeIcons('dark');
+                }
+            }, 50);
         }
         
-        // Save preference
-        localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
-    }
-
-    // Theme toggle functionality
-    const html = document.querySelector('html');
-    const themeToggleBtn = document.querySelector('#themeToggle button');
-    
-    // Check for saved theme preference or use system preference
-    const currentTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-    html.classList.add(currentTheme);
-    
-    // Set initial icon visibility
-    const sunIcon = document.getElementById('sunIcon');
-    const moonIcon = document.getElementById('moonIcon');
-    if (currentTheme === 'dark') {
-        sunIcon.classList.remove('hidden');
-        moonIcon.classList.add('hidden');
-    } else {
-        sunIcon.classList.add('hidden');
-        moonIcon.classList.remove('hidden');
-    }
-    
-    // Attach smooth transition handler
-    themeToggleBtn.addEventListener('click', toggleTheme);
-
-    // Verified badge click handler
-    const verifiedBadge = document.getElementById('verifiedBadge');
-    const verificationOverlay = document.getElementById('verificationOverlay');
-    const closeVerification = document.getElementById('closeVerification');
-
-    verifiedBadge.addEventListener('click', () => {
-        verificationOverlay.classList.remove('hidden');
-        document.body.style.overflow = 'hidden';
-    });
-
-    closeVerification.addEventListener('click', () => {
-        verificationOverlay.classList.add('hidden');
-        document.body.style.overflow = '';
-    });
-
-    document.addEventListener('contextmenu', event => event.preventDefault());
-    document.onkeydown = function(e) {
-        if (e.key == "F12" || (e.ctrlKey && e.shiftKey && e.key == "I") || (e.ctrlKey && e.key == "U")) {
-            return false;
+        function createCircleExpandAnimation() {
+            // Remove any existing animation elements
+            const existingCircle = document.querySelector('.circle-expand');
+            if (existingCircle) {
+                existingCircle.remove();
+            }
+            
+            // Get click position from theme toggle button
+            const themeToggle = document.getElementById('themeToggle');
+            const rect = themeToggle.getBoundingClientRect();
+            const x = rect.left + rect.width / 2;
+            const y = rect.top + rect.height / 2;
+            
+            // Create animation circle
+            const circle = document.createElement('div');
+            circle.className = 'circle-expand';
+            circle.style.left = `${x}px`;
+            circle.style.top = `${y}px`;
+            circle.style.width = '1px';
+            circle.style.height = '1px';
+            
+            document.body.appendChild(circle);
+            
+            // Trigger animation
+            setTimeout(() => {
+                circle.style.transform = 'scale(100)';
+                circle.style.opacity = '0';
+                circle.style.transition = 'transform 0.8s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.8s ease';
+            }, 10);
+            
+            // Remove element after animation
+            setTimeout(() => {
+                circle.remove();
+            }, 1000);
         }
-    };
-
-  // Deteksi iframing
-  if (window !== window.top) {
-    window.top.location = window.location;
-  }
-
-  // Deteksi DevTools dibuka
-  setInterval(function() {
-    const start = new Date();
-    debugger;
-    if (new Date() - start > 100) {
-      window.location.href = "https://google.com"; // redirect kalau curiga
+        
+        // Basic security (non-intrusive)
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+        });
+        
+        // Prevent iframing
+        if (window.self !== window.top) {
+            window.top.location = window.self.location;
+        }
+        
+        // Add hover effects to interactive elements
+        document.querySelectorAll('.outline-card, .outline-btn').forEach(element => {
+            element.addEventListener('mouseenter', function() {
+                this.style.transition = 'all 0.3s ease';
+            });
+        });
+    </script>
+    
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Agung Mahesa",
+      "alternateName": ["agungdevx", "Agung DevX", "AgungDevX"],
+      "url": "https://profile.agungtech.web.id",
+      "image": "https://files.catbox.moe/dx80a2.jpg",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Cianjur",
+        "addressRegion": "Jawa Barat",
+        "addressCountry": "ID"
+      },
+      "homeLocation": {
+        "@type": "Place",
+        "name": "Cianjur"
+      },
+      "sameAs": [
+        "https://agungdevx.my.id",
+        "https://github.com/agungdevx",
+        "https://www.instagram.com/agungdevx",
+        "https://t.me/agungdevx",
+        "https://linkedin.com/in/agungdevx",
+        "https://tiktok.com/@agungdevx",
+        "https://lynk.id/techbot"
+      ],
+      "jobTitle": "Full Stack Web Developer & API Engineer",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "AgungDevX Solutions",
+        "url": "https://agungdevx.my.id"
+      },
+      "description": "Professional Full Stack Web Developer, WhatsApp Bot Developer, and API Engineer based in Cianjur, West Java. Specialist in Node.js, Cloud Architecture, and AI Prompt Engineering.",
+      "knowsAbout": [
+        "Web Development",
+        "API Design",
+        "WhatsApp Bot Automation",
+        "Node.js",
+        "JavaScript",
+        "Cybersecurity",
+        "AI Prompt Engineering",
+        "RESTful APIs"
+      ],
+      "gender": "Male",
+      "nationality": {
+        "@type": "Country",
+        "name": "Indonesia"
+      }
     }
-  }, 1000);
-
-  // Nonaktifkan klik kanan & inspect element
-  document.addEventListener('contextmenu', event => event.preventDefault());
-  document.onkeydown = function(e) {
-    if (e.key === "F12" || (e.ctrlKey && e.shiftKey && e.key === "I")) {
-      return false;
-    }
-  };
-  </script>
- </body>
+    </script>
+</body>
 </html>
