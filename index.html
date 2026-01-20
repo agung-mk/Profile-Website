@@ -21,7 +21,6 @@
     
     <script>
         tailwind.config = {
-            darkMode: 'class',
             theme: {
                 extend: {
                     fontFamily: {
@@ -31,10 +30,6 @@
                         'fade-in': 'fadeIn 0.5s ease-out',
                         'fade-in-up': 'fadeInUp 0.6s ease-out',
                         'slide-up': 'slideUp 0.5s ease-out',
-                        'rotate': 'rotate 0.5s ease-in-out',
-                        'circle-expand': 'circleExpand 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards',
-                        'ripple': 'ripple 1s ease-out infinite',
-                        'telegram-verified': 'telegramVerified 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55)',
                     },
                     keyframes: {
                         fadeIn: {
@@ -48,23 +43,6 @@
                         slideUp: {
                             '0%': { transform: 'translateY(10px)' },
                             '100%': { transform: 'translateY(0)' },
-                        },
-                        rotate: {
-                            '0%': { transform: 'rotate(0deg)' },
-                            '100%': { transform: 'rotate(360deg)' },
-                        },
-                        circleExpand: {
-                            from: { transform: 'scale(0)' },
-                            to: { transform: 'scale(3)' },
-                        },
-                        ripple: {
-                            '0%': { transform: 'scale(0.5)', opacity: '1' },
-                            '100%': { transform: 'scale(2.5)', opacity: '0' },
-                        },
-                        telegramVerified: {
-                            '0%': { transform: 'scale(1)' },
-                            '50%': { transform: 'scale(1.2)' },
-                            '100%': { transform: 'scale(1)' },
                         }
                     },
                 }
@@ -80,39 +58,36 @@
             --bg-color: #ffffff;
         }
         
-        .dark {
-            --border-color: #404040;
-            --text-color: #f5f5f5;
-            --bg-color: #0a0a0a;
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --border-color: #404040;
+                --text-color: #f5f5f5;
+                --bg-color: #0a0a0a;
+            }
         }
         
         body {
             background-color: var(--bg-color);
             color: var(--text-color);
-            transition: background-color 0.5s ease, color 0.5s ease;
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
         
         .outline-card {
             border: 1px solid var(--border-color);
             background-color: transparent;
-            transition: all 0.3s ease;
+            transition: all 0.2s ease;
         }
         
         .outline-card:hover {
             border-color: var(--text-color);
             transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-        }
-        
-        .dark .outline-card:hover {
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
         }
         
         .outline-btn {
             border: 1px solid var(--border-color);
             background-color: transparent;
             color: var(--text-color);
-            transition: all 0.3s ease;
+            transition: all 0.2s ease;
         }
         
         .outline-btn:hover {
@@ -120,8 +95,10 @@
             background-color: rgba(0, 0, 0, 0.02);
         }
         
-        .dark .outline-btn:hover {
-            background-color: rgba(255, 255, 255, 0.02);
+        @media (prefers-color-scheme: dark) {
+            .outline-btn:hover {
+                background-color: rgba(255, 255, 255, 0.02);
+            }
         }
         
         .section-divider {
@@ -171,95 +148,18 @@
             }
         }
         
-        /* Theme toggle animation */
-        .theme-toggle-container {
-            position: fixed;
-            bottom: 24px;
-            right: 24px;
-            z-index: 50;
-        }
-        
-        .theme-toggle-btn {
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            border: 1px solid var(--border-color);
-            background-color: var(--bg-color);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        
-        .theme-toggle-btn:hover {
-            border-color: var(--text-color);
-            transform: scale(1.05);
-        }
-        
-        .theme-icon {
-            width: 20px;
-            height: 20px;
-            stroke: currentColor;
-            stroke-width: 2;
-            stroke-linecap: round;
-            stroke-linejoin: round;
-            fill: none;
-        }
-        
-        #sunIcon, #moonIcon {
-            transition: transform 0.5s ease;
-        }
-        
-        /* Verification overlay */
-        .verification-overlay {
-            background-color: rgba(0, 0, 0, 0.8);
-        }
-        
-        .dark .verification-overlay {
-            background-color: rgba(0, 0, 0, 0.9);
-        }
-        
-        /* Circle expand animation for theme toggle */
-        .circle-expand {
-            position: fixed;
-            border-radius: 50%;
-            background-color: var(--text-color);
-            transform: scale(0);
-            z-index: 9999;
-            pointer-events: none;
-            mix-blend-mode: difference;
-        }
-        
         /* Responsive adjustments */
         @media (max-width: 640px) {
             .profile-img {
                 width: 100px;
                 height: 100px;
             }
-            
-            .theme-toggle-container {
-                bottom: 20px;
-                right: 20px;
-            }
-            
-            .theme-toggle-btn {
-                width: 44px;
-                height: 44px;
-            }
-        }
-        
-        /* View transition support */
-        @supports (view-transition-name: none) {
-            ::view-transition-group(root) {
-                animation-duration: 0.5s;
-            }
         }
     </style>
 </head>
 <body class="font-sans antialiased min-h-screen">
 
-    <!-- Loading Screen -->
+   <!-- Loading Screen -->
     <div id="loadingScreen" class="fixed inset-0 bg-white dark:bg-black z-50 flex flex-col items-center justify-center transition-colors duration-300">
         <div class="loading-dots mb-4">
             <span></span>
@@ -269,50 +169,8 @@
         <p class="text-sm tracking-wide">LOADING</p>
     </div>
 
-    <!-- Verification Overlay -->
-    <div id="verificationOverlay" class="verification-overlay fixed inset-0 z-40 flex items-center justify-center hidden">
-        <div class="relative">
-            <div class="absolute inset-0 flex items-center justify-center">
-                <div class="w-32 h-32 rounded-full border border-current opacity-20 animate-ripple"></div>
-                <div class="w-32 h-32 rounded-full border border-current opacity-20 animate-ripple" style="animation-delay: 0.3s;"></div>
-                <div class="w-32 h-32 rounded-full border border-current opacity-20 animate-ripple" style="animation-delay: 0.6s;"></div>
-            </div>
-            <div class="relative z-50 outline-card p-8 rounded-2xl text-center max-w-sm mx-4 backdrop-blur-sm">
-                <div class="w-20 h-20 border-2 border-current rounded-full flex items-center justify-center mx-auto mb-4 animate-telegram-verified">
-                    <svg class="social-icon w-10 h-10" viewBox="0 0 24 24">
-                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-                        <polyline points="22 4 12 14.01 9 11.01"></polyline>
-                    </svg>
-                </div>
-                <h3 class="text-xl font-bold">Verified Account</h3>
-                <p class="mt-2 text-gray-600 dark:text-gray-400">This is a verified website. All authentic content and can be trusted.</p>
-                <button id="closeVerification" class="mt-6 px-6 py-2 outline-btn rounded-full hover:border-current transition-colors">Got it</button>
-            </div>
-        </div>
-    </div>
-
     <!-- Main Content -->
     <div id="mainContent" class="hidden">
-        <!-- Theme Toggle Button -->
-        <div class="theme-toggle-container animate-fade-in">
-            <button id="themeToggle" class="theme-toggle-btn">
-                <svg id="sunIcon" class="theme-icon hidden" viewBox="0 0 24 24">
-                    <circle cx="12" cy="12" r="5"></circle>
-                    <line x1="12" y1="1" x2="12" y2="3"></line>
-                    <line x1="12" y1="21" x2="12" y2="23"></line>
-                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                    <line x1="1" y1="12" x2="3" y2="12"></line>
-                    <line x1="21" y1="12" x2="23" y2="12"></line>
-                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                </svg>
-                <svg id="moonIcon" class="theme-icon" viewBox="0 0 24 24">
-                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-                </svg>
-            </button>
-        </div>
-
         <!-- Header -->
         <header class="py-6 px-4 md:px-8 max-w-4xl mx-auto animate-fade-in">
             <div class="flex justify-between items-center">
@@ -346,8 +204,7 @@
                                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMTAwIiBjeT0iMTAwIiByPSI5OCIgc3Ryb2tlPSIjZTBlMGUwIiBzdHJva2Utd2lkdGg9IjIiLz48cGF0aCBkPSJNMTMwLDEyMGMwLDE2LjU2LTEzLjQ0LDMwLTMwLDMwcy0zMC0xMy40NC0zMC0zMGMwLTE2LjU2LDEzLjQ0LTMwLDMwLTMwczMwLDEzLjQ0LDMwLDMwWiIgc3Ryb2tlPSIjZTBlMGUwIiBzdHJva2Utd2lkdGg9IjIiLz48Y2lyY2xlIGN4PSIxMDAiIGN5PSI4MCIgcj0iMjAiIHN0cm9rZT0iI2UwZTBlMCIgc3Ryb2tlLXdpZHRoPSIyIi8+PC9zdmc+'"
                                 >
                             </div>
-                            <div class="absolute -bottom-2 -right-2 w-10 h-10 bg-white dark:bg-black rounded-full flex items-center justify-center outline-card border cursor-pointer"
-                                 id="verifiedBadge">
+                            <div class="absolute -bottom-2 -right-2 w-10 h-10 bg-white dark:bg-black rounded-full flex items-center justify-center outline-card border">
                                 <svg class="social-icon w-5 h-5" viewBox="0 0 24 24">
                                     <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
                                     <polyline points="22 4 12 14.01 9 11.01"></polyline>
@@ -393,7 +250,7 @@
                             <!-- Social Links -->
                             <div class="flex space-x-4 justify-center md:justify-start">
                                 <a href="https://instagram.com/agungdevx" target="_blank" rel="noopener noreferrer" 
-                                   class="outline-btn w-10 h-10 rounded-full flex items-center justify-center hover:border-current">
+                                   class="outline-btn w-10 h-10 rounded-full flex items-center justify-center hover:border-gray-800 dark:hover:border-gray-200">
                                     <svg class="social-icon w-5 h-5" viewBox="0 0 24 24">
                                         <rect x="2" y="2" width="20" height="20" rx="5"></rect>
                                         <circle cx="12" cy="12" r="5"></circle>
@@ -401,19 +258,19 @@
                                     </svg>
                                 </a>
                                 <a href="https://github.com/agungdevx" target="_blank" rel="noopener noreferrer"
-                                   class="outline-btn w-10 h-10 rounded-full flex items-center justify-center hover:border-current">
+                                   class="outline-btn w-10 h-10 rounded-full flex items-center justify-center hover:border-gray-800 dark:hover:border-gray-200">
                                     <svg class="social-icon w-5 h-5" viewBox="0 0 24 24">
                                         <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
                                     </svg>
                                 </a>
                                 <a href="https://t.me/agungdevx" target="_blank" rel="noopener noreferrer"
-                                   class="outline-btn w-10 h-10 rounded-full flex items-center justify-center hover:border-current">
+                                   class="outline-btn w-10 h-10 rounded-full flex items-center justify-center hover:border-gray-800 dark:hover:border-gray-200">
                                     <svg class="social-icon w-5 h-5" viewBox="0 0 24 24">
                                         <path d="M21 5L2 12.5l7 1M21 5l-2.5 15L9 13.5M21 5L9 13.5m0 0V19l3.5-4.5"></path>
                                     </svg>
                                 </a>
                                 <a href="https://open.spotify.com/playlist/0n6nan55XVDcV6X4AOwwkN?si=HJIOVhmhTEWEzjbrc1LOLQ" target="_blank" rel="noopener noreferrer"
-                                   class="outline-btn w-10 h-10 rounded-full flex items-center justify-center hover:border-current">
+                                   class="outline-btn w-10 h-10 rounded-full flex items-center justify-center hover:border-gray-800 dark:hover:border-gray-200">
                                     <svg class="social-icon w-5 h-5" viewBox="0 0 24 24">
                                         <circle cx="12" cy="12" r="10"></circle>
                                         <path d="M8 12c0 1.38.72 2.5 1.71 3.15.5.33 1.1.55 1.79.55.69 0 1.29-.22 1.79-.55.99-.65 1.71-1.77 1.71-3.15s-.72-2.5-1.71-3.15c-.5-.33-1.1-.55-1.79-.55-.69 0-1.29.22-1.79.55C8.72 9.5 8 10.62 8 12z"></path>
@@ -583,145 +440,38 @@
                 });
             });
             
-            // Initialize theme
-            initializeTheme();
+            // Simple theme detection and preference
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const savedTheme = localStorage.getItem('theme');
+            
+            if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+                document.documentElement.classList.add('dark');
+            } else if (savedTheme === 'light') {
+                document.documentElement.classList.remove('dark');
+            }
+            
+            // Detect theme changes
+            window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+                if (!localStorage.getItem('theme')) {
+                    if (e.matches) {
+                        document.documentElement.classList.add('dark');
+                    } else {
+                        document.documentElement.classList.remove('dark');
+                    }
+                }
+            });
             
             // Add keyboard shortcuts
             document.addEventListener('keydown', function(e) {
                 // Toggle theme with Ctrl/Cmd + T
                 if ((e.ctrlKey || e.metaKey) && e.key === 't') {
                     e.preventDefault();
-                    toggleTheme();
+                    const isDark = document.documentElement.classList.contains('dark');
+                    document.documentElement.classList.toggle('dark');
+                    localStorage.setItem('theme', isDark ? 'light' : 'dark');
                 }
             });
-            
-            // Verified badge functionality
-            const verifiedBadge = document.getElementById('verifiedBadge');
-            const verificationOverlay = document.getElementById('verificationOverlay');
-            const closeVerification = document.getElementById('closeVerification');
-            
-            if (verifiedBadge && verificationOverlay && closeVerification) {
-                verifiedBadge.addEventListener('click', () => {
-                    verificationOverlay.classList.remove('hidden');
-                    document.body.style.overflow = 'hidden';
-                });
-                
-                closeVerification.addEventListener('click', () => {
-                    verificationOverlay.classList.add('hidden');
-                    document.body.style.overflow = '';
-                });
-                
-                // Close verification overlay when clicking outside
-                verificationOverlay.addEventListener('click', (e) => {
-                    if (e.target === verificationOverlay) {
-                        verificationOverlay.classList.add('hidden');
-                        document.body.style.overflow = '';
-                    }
-                });
-            }
         });
-        
-        // Theme management functions
-        function initializeTheme() {
-            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-            const savedTheme = localStorage.getItem('theme');
-            
-            if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
-                document.documentElement.classList.add('dark');
-                updateThemeIcons('dark');
-            } else {
-                document.documentElement.classList.remove('dark');
-                updateThemeIcons('light');
-            }
-            
-            // Set up theme toggle button
-            const themeToggle = document.getElementById('themeToggle');
-            if (themeToggle) {
-                themeToggle.addEventListener('click', toggleTheme);
-            }
-            
-            // Detect system theme changes
-            window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
-                if (!localStorage.getItem('theme')) {
-                    if (e.matches) {
-                        document.documentElement.classList.add('dark');
-                        updateThemeIcons('dark');
-                    } else {
-                        document.documentElement.classList.remove('dark');
-                        updateThemeIcons('light');
-                    }
-                }
-            });
-        }
-        
-        function updateThemeIcons(theme) {
-            const sunIcon = document.getElementById('sunIcon');
-            const moonIcon = document.getElementById('moonIcon');
-            
-            if (theme === 'dark') {
-                sunIcon?.classList.remove('hidden');
-                moonIcon?.classList.add('hidden');
-            } else {
-                sunIcon?.classList.add('hidden');
-                moonIcon?.classList.remove('hidden');
-            }
-        }
-        
-        function toggleTheme() {
-            const isDark = document.documentElement.classList.contains('dark');
-            
-            // Create circle expand animation
-            createCircleExpandAnimation();
-            
-            // Toggle theme after a short delay
-            setTimeout(() => {
-                if (isDark) {
-                    document.documentElement.classList.remove('dark');
-                    localStorage.setItem('theme', 'light');
-                    updateThemeIcons('light');
-                } else {
-                    document.documentElement.classList.add('dark');
-                    localStorage.setItem('theme', 'dark');
-                    updateThemeIcons('dark');
-                }
-            }, 50);
-        }
-        
-        function createCircleExpandAnimation() {
-            // Remove any existing animation elements
-            const existingCircle = document.querySelector('.circle-expand');
-            if (existingCircle) {
-                existingCircle.remove();
-            }
-            
-            // Get click position from theme toggle button
-            const themeToggle = document.getElementById('themeToggle');
-            const rect = themeToggle.getBoundingClientRect();
-            const x = rect.left + rect.width / 2;
-            const y = rect.top + rect.height / 2;
-            
-            // Create animation circle
-            const circle = document.createElement('div');
-            circle.className = 'circle-expand';
-            circle.style.left = `${x}px`;
-            circle.style.top = `${y}px`;
-            circle.style.width = '1px';
-            circle.style.height = '1px';
-            
-            document.body.appendChild(circle);
-            
-            // Trigger animation
-            setTimeout(() => {
-                circle.style.transform = 'scale(100)';
-                circle.style.opacity = '0';
-                circle.style.transition = 'transform 0.8s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.8s ease';
-            }, 10);
-            
-            // Remove element after animation
-            setTimeout(() => {
-                circle.remove();
-            }, 1000);
-        }
         
         // Basic security (non-intrusive)
         document.addEventListener('contextmenu', function(e) {
@@ -732,13 +482,6 @@
         if (window.self !== window.top) {
             window.top.location = window.self.location;
         }
-        
-        // Add hover effects to interactive elements
-        document.querySelectorAll('.outline-card, .outline-btn').forEach(element => {
-            element.addEventListener('mouseenter', function() {
-                this.style.transition = 'all 0.3s ease';
-            });
-        });
     </script>
     
     <!-- Structured Data for SEO -->
@@ -747,7 +490,7 @@
       "@context": "https://schema.org",
       "@type": "Person",
       "name": "Agung Mahesa",
-      "alternateName": ["agungdevx", "Agung DevX", "AgungDevX"],
+      "alternateName": ["agungdevx", "Agung DevX", "agungtech", "AgungTech", "Agung Tech", "AgungDevX"],
       "url": "https://profile.agungtech.web.id",
       "image": "https://files.catbox.moe/dx80a2.jpg",
       "address": {
