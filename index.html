@@ -330,13 +330,20 @@
                                         <path d="M21 5L2 12.5l7 1M21 5l-2.5 15L9 13.5M21 5L9 13.5m0 0V19l3.5-4.5"></path>
                                     </svg>
                                 </a>
-                                <a href="https://open.spotify.com/playlist/0n6nan55XVDcV6X4AOwwkN?si=HJIOVhmhTEWEzjbrc1LOLQ" target="_blank" rel="noopener noreferrer"
+                                <a href="https://open.spotify.com/embed/playlist/1sWXmYlhcsvEjfGExsy56u" target="_blank" rel="noopener noreferrer"
                                    class="outline-btn w-10 h-10 rounded-full flex items-center justify-center hover:border-gray-800 dark:hover:border-gray-200">
                                     <svg class="social-icon w-5 h-5" viewBox="0 0 24 24">
                                         <circle cx="12" cy="12" r="10"></circle>
                                         <path d="M8 12c0 1.38.72 2.5 1.71 3.15.5.33 1.1.55 1.79.55.69 0 1.29-.22 1.79-.55.99-.65 1.71-1.77 1.71-3.15s-.72-2.5-1.71-3.15c-.5-.33-1.1-.55-1.79-.55-.69 0-1.29.22-1.79.55C8.72 9.5 8 10.62 8 12z"></path>
                                     </svg>
                                 </a>
+                                <a href="mailto:contact@agungdevx.my.id" 
+                                   class="outline-btn w-10 h-10 rounded-full flex items-center justify-center hover:border-gray-800 dark:hover:border-gray-200">
+                                    <svg class="social-icon w-5 h-5" viewBox="0 0 24 24">
+                                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                        <polyline points="22,6 12,13 2,6"></polyline>
+                                    </svg>
+                                </a>                                
                             </div>
                         </div>
                     </div>
@@ -407,7 +414,7 @@
                     </a>
                 </div>
             </section>
-            
+
             <!-- Spotify Embed -->
             <section class="mb-12 animate-fade-in-up" style="animation-delay: 0.2s">
                 <div class="outline-card rounded-xl p-6">
@@ -420,12 +427,13 @@
                         <h2 class="text-xl font-semibold">My Spotify Vibe</h2>
                     </div>
                     <p class="text-gray-600 dark:text-gray-400 mb-4">Check out what I'm currently vibing to on Spotify.</p>
-                    
+
                     <div class="rounded-xl overflow-hidden shadow-lg border border-gray-200 dark:border-gray-800">
             <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/1sWXmYlhcsvEjfGExsy56u?utm_source=generator" width="100%" height="180" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-                    </div>
-                    
-                    <p class="text-xs text-center text-gray-500 mt-3 italic">Spotify • Play to listen along with me</p>
+                    </div>                    
+                    <div class="text-xs text-center text-gray-500 dark:text-gray-400 mt-4">
+                        Spotify • Play to listen along with me
+                    </div>                    
                 </div>
             </section>
 
@@ -441,7 +449,7 @@
                     <p class="text-gray-600 dark:text-gray-400 mb-4">Leave a message or say hello!</p>
                     <div class="rounded-lg overflow-hidden border">
                         <iframe 
-                            src="https://www5.cbox.ws/box/?boxid=957068&boxtag=pt44dr" 
+                            src="https://www5.cbox.ws/box/?boxid=960850&boxtag=-" 
                             width="100%" 
                             height="400" 
                             allowtransparency="yes" 
@@ -457,6 +465,144 @@
                     </div>
                 </div>
             </section>
+            
+            <!-- GitHub Stats & Repo Info Section -->
+            <section class="animate-fade-in-up mt-12 mb-8" style="animation-delay: 0.3s">
+                <div class="outline-card rounded-xl p-6">
+                    <div class="flex items-center mb-6">
+                        <svg class="social-icon w-5 h-5 mr-2" viewBox="0 0 24 24">
+                            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                        </svg>
+                        <h2 class="text-xl font-semibold">GitHub Profile & Repository</h2>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                        <!-- LEFT COLUMN: User Profile Stats -->
+                        <div>
+                            <h3 class="font-semibold mb-4 flex items-center">
+                                <img src="https://github.com/agungdevx.png" alt="GitHub Avatar" 
+                                     class="w-8 h-8 rounded-full mr-3">
+                                <span id="githubName">@agungdevx</span>
+                            </h3>
+                            <p id="githubBio" class="text-sm text-gray-600 dark:text-gray-400 mb-4">
+                                Full Stack Developer • WhatsApp Bot Specialist
+                            </p>
+                            
+                            <!-- User Stats Grid -->
+                            <div class="grid grid-cols-4 gap-3 mb-6">
+                                <div class="outline-card rounded-lg p-3 text-center">
+                                    <div class="text-xl font-bold text-gray-800 dark:text-gray-200" id="repoCount">--</div>
+                                    <div class="text-xs text-gray-600 dark:text-gray-400">Repos</div>
+                                </div>
+                                <div class="outline-card rounded-lg p-3 text-center">
+                                    <div class="text-xl font-bold text-gray-800 dark:text-gray-200" id="gistCount">--</div>
+                                    <div class="text-xs text-gray-600 dark:text-gray-400">Gists</div>
+                                </div>
+                                <div class="outline-card rounded-lg p-3 text-center">
+                                    <div class="text-xl font-bold text-gray-800 dark:text-gray-200" id="followersCount">--</div>
+                                    <div class="text-xs text-gray-600 dark:text-gray-400">Followers</div>
+                                </div>
+                                <div class="outline-card rounded-lg p-3 text-center">
+                                    <div class="text-xl font-bold text-gray-800 dark:text-gray-200" id="followingCount">--</div>
+                                    <div class="text-xs text-gray-600 dark:text-gray-400">Following</div>
+                                </div>
+                            </div>
+                            
+                            <!-- Recent Activity -->
+                            <div class="outline-card rounded-lg p-4">
+                                <h3 class="font-semibold mb-3 flex items-center">
+                                    <svg class="social-icon w-4 h-4 mr-2" viewBox="0 0 24 24">
+                                        <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                                    </svg>
+                                    Recent Activity
+                                </h3>
+                                <div class="space-y-2">
+                                    <div class="flex items-center text-sm">
+                                        <div class="w-2 h-2 bg-green-500 rounded-full mr-2"></div>
+                                        <span class="truncate">Loading activity...</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- RIGHT COLUMN: Repository Info -->
+                        <div>
+                            <h3 class="font-semibold mb-4 flex items-center">
+                                <svg class="social-icon w-5 h-5 mr-2" viewBox="0 0 24 24">
+                                    <path d="M4 5h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2z"></path>
+                                    <polyline points="22,7 12,13 2,7"></polyline>
+                                </svg>
+                                This Website Repo
+                            </h3>
+                            <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">
+                                <span class="font-medium">agung-mk/Profile-Website</span> - Minimalist portfolio website built with HTML, Tailwind CSS & JavaScript.
+                            </p>
+                            
+                            <!-- Repo Stats Grid -->
+                            <div class="grid grid-cols-3 gap-3 mb-6">
+                                <div class="outline-card rounded-lg p-3 text-center">
+                                    <div class="text-xl font-bold text-gray-800 dark:text-gray-200" id="repoStars">1</div>
+                                    <div class="text-xs text-gray-600 dark:text-gray-400">Stars</div>
+                                </div>
+                                <div class="outline-card rounded-lg p-3 text-center">
+                                    <div class="text-xl font-bold text-gray-800 dark:text-gray-200" id="repoForks">0</div>
+                                    <div class="text-xs text-gray-600 dark:text-gray-400">Forks</div>
+                                </div>
+                                <div class="outline-card rounded-lg p-3 text-center">
+                                    <div class="text-xl font-bold text-gray-800 dark:text-gray-200" id="repoWatchers">1</div>
+                                    <div class="text-xs text-gray-600 dark:text-gray-400">Watching</div>
+                                </div>
+                            </div>
+                            
+                            <!-- Repo Details -->
+                            <div class="outline-card rounded-lg p-4">
+                                <h3 class="font-semibold mb-3">Repository Details</h3>
+                                <div class="space-y-2 text-sm">
+                                    <div class="flex justify-between">
+                                        <span class="text-gray-600 dark:text-gray-400">Updated:</span>
+                                        <span id="lastUpdate" class="font-medium">21 Jan 2026</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span class="text-gray-600 dark:text-gray-400">Language:</span>
+                                        <span id="repoLanguage" class="font-medium">HTML</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span class="text-gray-600 dark:text-gray-400">Size:</span>
+                                        <span id="repoSize" class="font-medium">-- MB</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span class="text-gray-600 dark:text-gray-400">Joined GitHub:</span>
+                                        <span id="joinDate" class="font-medium">--</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Links -->
+                    <div class="grid grid-cols-2 gap-4 mt-8">
+                        <a href="https://github.com/agungdevx" target="_blank" rel="noopener noreferrer"
+                           class="outline-btn py-3 text-center flex items-center justify-center">
+                            <svg class="social-icon w-5 h-5 mr-2" viewBox="0 0 24 24">
+                                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                            </svg>
+                            View GitHub Profile
+                        </a>
+                        <a href="https://github.com/agung-mk/Profile-Website" target="_blank" rel="noopener noreferrer"
+                           class="outline-btn py-3 text-center flex items-center justify-center">
+                            <svg class="social-icon w-5 h-5 mr-2" viewBox="0 0 24 24">
+                                <path d="M4 5h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2z"></path>
+                                <polyline points="22,7 12,13 2,7"></polyline>
+                            </svg>
+                            View Repository
+                        </a>
+                    </div>
+                    
+                    <div class="text-xs text-center text-gray-500 dark:text-gray-400 mt-4">
+                        Data updates in real-time via GitHub API
+                    </div>
+                </div>
+            </section>            
         </main>
 
         <!-- Footer -->
@@ -476,18 +622,18 @@
             const options = { year: 'numeric', month: 'short', day: 'numeric' };
             document.getElementById('currentDate').textContent = now.toLocaleDateString('en-US', options);
             document.getElementById('currentYear').textContent = now.getFullYear();
-
+    
             // Hide loading screen and show content after a short delay
             setTimeout(() => {
                 document.getElementById('loadingScreen').classList.add('opacity-0');
                 document.getElementById('mainContent').classList.remove('hidden');
-
+    
                 // Remove loading screen from DOM after fade out
                 setTimeout(() => {
                     document.getElementById('loadingScreen').remove();
                 }, 300);
             }, 800);
-
+    
             // Add click effects to interactive elements
             document.querySelectorAll('a').forEach(link => {
                 link.addEventListener('click', function(e) {
@@ -496,17 +642,17 @@
                     }
                 });
             });
-
+    
             // Simple theme detection and preference
             const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
             const savedTheme = localStorage.getItem('theme');
-
+    
             if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
                 document.documentElement.classList.add('dark');
             } else if (savedTheme === 'light') {
                 document.documentElement.classList.remove('dark');
             }
-
+    
             // Detect theme changes
             window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
                 if (!localStorage.getItem('theme')) {
@@ -517,7 +663,7 @@
                     }
                 }
             });
-
+    
             // Add keyboard shortcuts
             document.addEventListener('keydown', function(e) {
                 // Toggle theme with Ctrl/Cmd + T
@@ -528,19 +674,204 @@
                     localStorage.setItem('theme', isDark ? 'light' : 'dark');
                 }
             });
-        });
-
-        // Basic security (non-intrusive)
-        document.addEventListener('contextmenu', function(e) {
-            e.preventDefault();
-        });
-
-        // Prevent iframing
-        if (window.self !== window.top) {
-            window.top.location = window.self.location;
-        }
-    </script>
     
+            // ==================== GITHUB API INTEGRATION ====================
+            const username = 'agungdevx';
+            const repoOwner = 'agung-mk';
+            const repoName = 'Profile-Website';
+            
+            // 1. Fetch COMPLETE User Data (agungdevx)
+            fetch(`https://api.github.com/users/${username}`)
+                .then(response => response.json())
+                .then(userData => {
+                    // Update all user stats
+                    if (userData.public_repos) {
+                        document.getElementById('repoCount').textContent = userData.public_repos;
+                    }
+                    if (userData.public_gists) {
+                        document.getElementById('gistCount').textContent = userData.public_gists;
+                    }
+                    if (userData.followers) {
+                        document.getElementById('followersCount').textContent = userData.followers;
+                    }
+                    if (userData.following) {
+                        document.getElementById('followingCount').textContent = userData.following;
+                    }
+                    if (userData.created_at) {
+                        const joinDate = new Date(userData.created_at);
+                        const options = { year: 'numeric', month: 'long' };
+                        document.getElementById('joinDate').textContent = joinDate.toLocaleDateString('en-US', options);
+                    }
+                    
+                    // Update additional info if elements exist
+                    if (userData.name) {
+                        const nameElement = document.getElementById('githubName');
+                        if (nameElement) nameElement.textContent = userData.name;
+                    }
+                    if (userData.bio) {
+                        const bioElement = document.getElementById('githubBio');
+                        if (bioElement) bioElement.textContent = userData.bio;
+                    }
+                })
+                .catch(err => {
+                    console.log('GitHub User API error:', err);
+                    // Fallback values
+                    document.getElementById('repoCount').textContent = '30+';
+                    document.getElementById('gistCount').textContent = '5+';
+                    document.getElementById('followersCount').textContent = '--';
+                    document.getElementById('followingCount').textContent = '--';
+                });
+            
+            // 2. Fetch SPECIFIC REPO Data (Profile-Website)
+            fetch(`https://api.github.com/repos/${repoOwner}/${repoName}`)
+                .then(response => response.json())
+                .then(repoData => {
+                    // Update repo stats
+                    if (repoData.stargazers_count !== undefined) {
+                        document.getElementById('repoStars').textContent = repoData.stargazers_count;
+                    }
+                    if (repoData.forks_count !== undefined) {
+                        document.getElementById('repoForks').textContent = repoData.forks_count;
+                    }
+                    if (repoData.watchers_count !== undefined) {
+                        document.getElementById('repoWatchers').textContent = repoData.watchers_count;
+                    }
+                    if (repoData.updated_at) {
+                        const updateDate = new Date(repoData.updated_at);
+                        const options = { day: 'numeric', month: 'short', year: 'numeric' };
+                        document.getElementById('lastUpdate').textContent = updateDate.toLocaleDateString('en-US', options);
+                    }
+                    if (repoData.size) {
+                        document.getElementById('repoSize').textContent = `${(repoData.size / 1024).toFixed(1)} MB`;
+                    }
+                    
+                    // Update language if not HTML 100%
+                    if (repoData.language) {
+                        document.getElementById('repoLanguage').textContent = repoData.language;
+                    }
+                })
+                .catch(err => {
+                    console.log('GitHub Repo API error:', err);
+                    // Fallback values for repo
+                    document.getElementById('repoStars').textContent = '1';
+                    document.getElementById('repoForks').textContent = '0';
+                    document.getElementById('repoWatchers').textContent = '1';
+                });
+            
+            // 3. Fetch Recent Events (Activity) - agungdevx
+            fetch(`https://api.github.com/users/${username}/events/public?per_page=3`)
+                .then(response => response.json())
+                .then(events => {
+                    const activityContainer = document.querySelector('.outline-card.rounded-lg.p-4 .space-y-2');
+                    if (!activityContainer) return;
+                    
+                    activityContainer.innerHTML = '';
+                    
+                    if (events.length === 0) {
+                        activityContainer.innerHTML = `
+                            <div class="text-sm text-gray-600 dark:text-gray-400">
+                                No recent public activity
+                            </div>
+                        `;
+                        return;
+                    }
+                    
+                    events.forEach(event => {
+                        let activityText = '';
+                        let iconColor = 'bg-blue-500';
+                        
+                        switch(event.type) {
+                            case 'PushEvent':
+                                activityText = `Pushed to ${event.repo.name}`;
+                                iconColor = 'bg-green-500';
+                                break;
+                            case 'CreateEvent':
+                                activityText = `Created ${event.payload.ref_type} in ${event.repo.name}`;
+                                iconColor = 'bg-purple-500';
+                                break;
+                            case 'WatchEvent':
+                                activityText = `Starred ${event.repo.name}`;
+                                iconColor = 'bg-yellow-500';
+                                break;
+                            case 'ForkEvent':
+                                activityText = `Forked ${event.repo.name}`;
+                                iconColor = 'bg-gray-500';
+                                break;
+                            case 'IssuesEvent':
+                                activityText = `${event.payload.action} issue in ${event.repo.name}`;
+                                iconColor = 'bg-red-500';
+                                break;
+                            case 'PullRequestEvent':
+                                activityText = `${event.payload.action} pull request in ${event.repo.name}`;
+                                iconColor = 'bg-indigo-500';
+                                break;
+                            default:
+                                activityText = `Activity in ${event.repo.name}`;
+                        }
+                        
+                        const timeAgo = getTimeAgo(new Date(event.created_at));
+                        
+                        activityContainer.innerHTML += `
+                            <div class="flex items-center text-sm mb-2">
+                                <div class="w-2 h-2 ${iconColor} rounded-full mr-2"></div>
+                                <div class="flex-1">
+                                    <span class="truncate">${activityText}</span>
+                                    <div class="text-xs text-gray-500 dark:text-gray-400">${timeAgo}</div>
+                                </div>
+                            </div>
+                        `;
+                    });
+                })
+                .catch(err => {
+                    console.log('GitHub Events API error:', err);
+                    const activityContainer = document.querySelector('.outline-card.rounded-lg.p-4 .space-y-2');
+                    if (activityContainer) {
+                        activityContainer.innerHTML = `
+                            <div class="text-sm text-gray-600 dark:text-gray-400">
+                                GitHub API limit reached
+                            </div>
+                            <div class="text-xs text-gray-500 dark:text-gray-400">
+                                Check manually: github.com/${username}
+                            </div>
+                        `;
+                    }
+                });
+    
+            // Helper function for time ago
+            function getTimeAgo(date) {
+                const seconds = Math.floor((new Date() - date) / 1000);
+                
+                let interval = seconds / 31536000;
+                if (interval > 1) return Math.floor(interval) + " years ago";
+                
+                interval = seconds / 2592000;
+                if (interval > 1) return Math.floor(interval) + " months ago";
+                
+                interval = seconds / 86400;
+                if (interval > 1) return Math.floor(interval) + " days ago";
+                
+                interval = seconds / 3600;
+                if (interval > 1) return Math.floor(interval) + " hours ago";
+                
+                interval = seconds / 60;
+                if (interval > 1) return Math.floor(interval) + " minutes ago";
+                
+                return Math.floor(seconds) + " seconds ago";
+            }
+    
+            // Basic security (non-intrusive)
+            document.addEventListener('contextmenu', function(e) {
+                e.preventDefault();
+            });
+    
+            // Prevent iframing
+            if (window.self !== window.top) {
+                window.top.location = window.self.location;
+            }
+    
+        }); // DOMContentLoaded end
+    </script>
+
     <!-- Professional SEO -->
     <script type="application/ld+json">
     {
