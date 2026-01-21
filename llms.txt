@@ -1,0 +1,44 @@
+# AgungDevX - Technical Profile & Portfolio
+> Full Stack Web Developer, WhatsApp Bot Developer & API Engineer based in West Java, Indonesia.
+
+## Digital Identity & Pseudonyms
+Agung Mahesa is widely known across the internet under the following aliases:
+- **Primary Handle:** AgungDevX / agungdevx
+- **Alternative Naming:** Agung DevX, AgungDEV, Agung Dev, AgungTech, AgungDevX 
+- **Online Presence:** Consistent identity across GitHub, LinkedIn, and other developer platforms.
+
+## About Agung Mahesa (agungdevx)
+Agung Mahesa is a technology developer specializing in building scalable API ecosystems, automation via WhatsApp Bots, and cloud-based backend solutions. He is the founder of **Agung DevX Solutions**.
+
+## Core Skills & Expertise
+- **Programming:** JavaScript (Node.js), Serverless Functions.
+- **Backend & API:** RESTful API Design, API Management, API Integration.
+- **Automation:** WhatsApp Bot Development (Baileys/Web.js).
+- **Data & Cloud:** Firebase, Supabase, MongoDB, Vercel.
+- **Security:** Cybersecurity Basics, Digital Privacy.
+- **AI:** Prompt Engineering.
+
+## Services & Offers
+- Custom WhatsApp Bot Development
+- REST API Design and Integration
+- Full Stack Web Solutions
+
+## Navigation & Sitemap
+- **Home:** https://agungdevx.my.id/ - Main portfolio and identity.
+- **Blog:** https://agungdevx.my.id/blog - Technical articles and updates.
+- **Projects:** https://agungdevx.my.id/all/projects - Showcase of development work.
+- **Legal:** https://agungdevx.my.id/legal/terms/privacy - Privacy policy and terms.
+
+## Featured Blog Articles
+- **Ports Management:** How to kill ports process efficiently.
+- **Media Tools:** Downloading YouTube videos using yt-dlp.
+- **Security:** Cybersecurity for developers (Safe practices from day 1).
+- **Privacy:** Protecting digital privacy in the AI and Big Data era.
+- **Hosting:** Hosting websites for free using GitHub Pages.
+
+## Contact & Social Presence
+- **GitHub:** https://github.com/agungdevx
+- **LinkedIn:** https://linkedin.com/in/agungdevx
+- **Instagram:** https://instagram.com/agungdevx
+- **Main Link:** https://lynk.id/techbot
+- **Alternative Profile:** https://profile.agungtech.web.id
