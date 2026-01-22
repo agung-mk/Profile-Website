@@ -46,9 +46,9 @@
 
     <!-- Favicon -->
     <link rel="icon" href="https://files.catbox.moe/ln3eyr.jpg" type="image/jpeg">
-    <link rel="icon" href="https://files.catbox.moe/ln3eyr.jpg" type="image/png">
-    <link rel="icon" href="https://files.catbox.moe/ln3eyr.jpg" type="image/jpg">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" sizes="any">
     <link rel="apple-touch-icon" href="https://files.catbox.moe/ln3eyr.jpg">
+    <link rel="shortcut icon" href="/favicon.ico">
     <meta name="apple-mobile-web-app-title" content="AgungDevX">
 
     <!-- Fonts -->
@@ -530,7 +530,7 @@
                                 This Website Repo
                             </h3>
                             <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">
-                                <span class="font-medium">agungdevx/Profile-Website</span> - Minimalist portfolio website built with HTML, Tailwind CSS & JavaScript.
+                                <span class="font-medium">agungdevx/Website-Profile</span> - Minimalist portfolio website built with HTML, Tailwind CSS & JavaScript.
                             </p>
 
                             <!-- Repo Stats Grid -->
@@ -583,7 +583,7 @@
                             </svg>
                             View GitHub Profile
                         </a>
-                        <a href="https://github.com/agungdevx/Profile-Website" target="_blank" rel="noopener noreferrer"
+                        <a href="https://github.com/agungdevx/Website-Profile" target="_blank" rel="noopener noreferrer"
                            class="outline-btn py-3 text-center flex items-center justify-center">
                             <svg class="social-icon w-5 h-5 mr-2" viewBox="0 0 24 24">
                                 <path d="M4 5h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2z"></path>
@@ -673,7 +673,7 @@
             // ==================== GITHUB API INTEGRATION ====================
             const username = 'agungdevx';
             const repoOwner = 'agungdevx';
-            const repoName = 'Profile-Website';
+            const repoName = 'Website-Profile';
 
             // 1. Fetch COMPLETE User Data (agungdevx)
             fetch(`https://api.github.com/users/${username}`)
@@ -717,7 +717,7 @@
                     document.getElementById('followingCount').textContent = '--';
                 });
 
-            // 2. Fetch SPECIFIC REPO Data (Profile-Website)
+            // 2. Fetch SPECIFIC REPO Data (Website-Profile)
             fetch(`https://api.github.com/repos/${repoOwner}/${repoName}`)
                 .then(response => response.json())
                 .then(repoData => {
@@ -951,5 +951,3 @@
 
 </body>
 </html>
-
-
